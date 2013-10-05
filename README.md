@@ -1,0 +1,2 @@
+
+    so $HOME/.vim/vimrc
