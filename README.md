@@ -1,2 +1,4 @@
 
-    so $HOME/.vim/vimrc
+# Vim Configuration
+
+    ./configure.sh
