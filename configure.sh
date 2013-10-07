@@ -3,3 +3,5 @@ curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen
 curl -Sso ~/.vim/colors/monokai.vim https://raw.github.com/sickill/vim-monokai/master/colors/Monokai.vim
 git submodule init
 cp .vimrc ~/.vimrc
+
+sudo pip install flake8
