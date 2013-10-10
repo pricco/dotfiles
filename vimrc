@@ -4,11 +4,15 @@ filetype plugin indent on
 colorscheme monokai
 
 "nerdtree
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore = ['\.pyc$', '\.git$', '\.idea$']
 let NERDTreeShowHidden=1
-autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_focus_on_files=1
+let g:nerdtree_tabs_open_on_console_startup=1
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
+map  <C-n> :tabnew<CR>
 
 "indent
 set smartindent
