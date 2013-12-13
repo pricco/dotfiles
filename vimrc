@@ -1,3 +1,5 @@
+let g:pathogen_disabled = []
+
 execute pathogen#infect()
 
 "Copy from http://amix.dk/vim/vimrc.html 
