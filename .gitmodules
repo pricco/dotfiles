@@ -34,3 +34,6 @@
 [submodule "bundle/vertical-move"]
 	path = bundle/vertical-move
 	url = git@github.com:bruno-/vim-vertical-move.git
+[submodule "bundle/jedi-vim"]
+	path = bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
