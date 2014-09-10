@@ -6,8 +6,11 @@ call vundle#rc()
 " Plugins
 Bundle 'gmarik/vundle'
 
+" NERDTree
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'Xuyuanp/nerdtree-git-plugin'
+
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'tpope/vim-fugitive'
 
@@ -414,7 +417,7 @@ let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:NERDTreeMinimalUI=1
-let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=26
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
