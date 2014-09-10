@@ -1,3 +1,4 @@
 .netrwhist
 autoload/*
 colors/*
+bundle/*

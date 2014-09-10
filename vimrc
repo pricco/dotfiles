@@ -6,6 +6,40 @@ call vundle#rc()
 " Plugins
 Bundle 'gmarik/vundle'
 
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'editorconfig/editorconfig-vim'
+Bundle 'tpope/vim-fugitive'
+
+Bundle 'vim-scripts/TaskList.vim'
+
+" Syntax checking hacks for vim
+Bundle 'scrooloose/syntastic'
+
+
+" Powerline is a statusline plugin for vim, and provides statuslines and
+" prompts for several other applications, including zsh, bash, tmux, IPython,
+" Awesome and Qtile.
+Bundle 'Lokaltog/powerline'
+
+ " Search local vimrc files (.lvimrc) in the tree (root dir up to current
+ " dir) and load them.
+Bundle 'embear/vim-localvimrc'
+
+" Lean & mean status/tabline for vim that's light as air
+Bundle 'bling/vim-airline'
+
+
+" Python
+" Bundle 'klen/python-mode'
+Bundle 'davidhalter/jedi-vim'
+
+" Puppet
+Bundle 'rodjek/vim-puppet'
+
+" Less
+Bundle 'groenewege/vim-less'
+
 
 " Copy from http://amix.dk/vim/vimrc.html 
 
@@ -373,7 +407,7 @@ set colorcolumn=79
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerdtree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let NERDTreeIgnore = ['\.pyc$', '\.git$', '\.idea$']
+let NERDTreeIgnore = ['\.pyc$', '\.git$', '\.idea$', '__pycache__', '.ropeproject']
 let NERDTreeShowHidden=1
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_console_startup=1
@@ -386,36 +420,21 @@ map <F2> :NERDTreeToggle<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => flake8
+" jedi-vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:flake8_max_line_length=80
-autocmd BufWritePost *.py call Flake8()
-"let g:flake8_ignore="E501,W293"
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "<leader>r"
+let g:jedi#show_call_signatures = "1"
 
+" hide docstring
+autocmd FileType python setlocal completeopt-=preview
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" python-mode                                                                   
-" https://github.com/klen/python-mode                                           
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:pymode_virtualenv=1 " Auto fix vim python paths if virtualenv enabled        
-let g:pymode_folding=1  " Enable python folding                                 
-let g:pymode_utils_whitespaces=0  " Do not autoremove unused whitespaces        
-map <Leader>rgd :call RopeGotoDefinition()<CR>                                  
-map <Leader>pl :PyLint<CR>                                                      
-let ropevim_enable_shortcuts=1                                                  
-let g:pymode_rope_goto_def_newwin="vnew"                                        
-let g:pymode_rope_extended_complete=1                                           
-let g:pymode_syntax=1                                                           
-let g:pymode_syntax_builtin_objs=0                                              
-let g:pymode_syntax_builtin_funcs=0                                             
-let g:pymode_lint_ignore = "C0110 Exported"  " ignore pep257 missing docstring warning
-let g:pymode_lint_minheight = 5   " Minimal height of pylint error window          
-let g:pymode_lint_maxheight = 15  " Maximal height of pylint error window          
-let g:pymode_lint_write = 0  " Disable pylint checking every save               
-let g:pymode_run_key = "<leader>run"  " default key conflicts with jedi-vim        
-let g:pymode_lint_mccabe_complexity = 10                                        
-let g:pymode_lint_checker="pyflakes,pep8,pep257,mccabe"                         
-let g:pymode_syntax_highlight_self=0  " do not highlight self                   
-let g:pymode_rope_vim_completion=0  " use jedi-vim for completion               
-let g:pymode_rope_guess_project=0                                               
-let g:pymode_doc_key="<leader>k"  " used jedi-vim for help  
+" TaskList
+map <leader>td <Plug>TaskList
+
+" Local Vimrc
+let g:localvimrc_whitelist='/home/pricco/sophilabs/.*'
