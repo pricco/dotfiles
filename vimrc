@@ -407,12 +407,14 @@ set colorcolumn=79
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerdtree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let NERDTreeIgnore = ['\.pyc$', '\.git$', '\.idea$', '__pycache__', '.ropeproject']
+let NERDTreeIgnore=['\.pyc$', '\.git$', '\.idea$', '__pycache__', '.ropeproject', '.vagrant']
 let NERDTreeShowHidden=1
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:nerdtree_tabs_open_on_console_startup=1
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeWinSize=40
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
@@ -422,13 +424,13 @@ map <F2> :NERDTreeToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " jedi-vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "<leader>d"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#rename_command = "<leader>r"
-let g:jedi#show_call_signatures = "1"
+let g:jedi#goto_assignments_command="<leader>g"
+let g:jedi#goto_definitions_command="<leader>d"
+let g:jedi#documentation_command="K"
+let g:jedi#usages_command="<leader>n"
+let g:jedi#completions_command="<C-Space>"
+let g:jedi#rename_command="<leader>r"
+let g:jedi#show_call_signatures="1"
 
 " hide docstring
 autocmd FileType python setlocal completeopt-=preview
@@ -438,3 +440,4 @@ map <leader>td <Plug>TaskList
 
 " Local Vimrc
 let g:localvimrc_whitelist='/home/pricco/sophilabs/.*'
+let g:localvimrc_sandbox=0
