@@ -1,48 +1,48 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 " Plugins
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " NERDTree
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'tpope/vim-fugitive'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'tpope/vim-fugitive'
 
-Bundle 'vim-scripts/TaskList.vim'
+Plugin 'vim-scripts/TaskList.vim'
 
 " Syntax checking hacks for vim
-Bundle 'scrooloose/syntastic'
-
+Plugin 'scrooloose/syntastic'
 
 " Powerline is a statusline plugin for vim, and provides statuslines and
 " prompts for several other applications, including zsh, bash, tmux, IPython,
 " Awesome and Qtile.
-Bundle 'Lokaltog/powerline'
+Plugin 'Lokaltog/powerline'
 
  " Search local vimrc files (.lvimrc) in the tree (root dir up to current
  " dir) and load them.
-Bundle 'embear/vim-localvimrc'
+Plugin 'embear/vim-localvimrc'
 
 " Lean & mean status/tabline for vim that's light as air
-Bundle 'bling/vim-airline'
-
+"Plugin 'bling/vim-airline'
 
 " Python
 " Bundle 'klen/python-mode'
-Bundle 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 
 " Puppet
-Bundle 'rodjek/vim-puppet'
+Plugin 'rodjek/vim-puppet'
 
 " Less
-Bundle 'groenewege/vim-less'
+Plugin 'groenewege/vim-less'
 
+call vundle#end()
 
 " Copy from http://amix.dk/vim/vimrc.html 
 
@@ -247,10 +247,10 @@ set viminfo^=%
 " => Status line
 """"""""""""""""""""""""""""""
 " Always show the status line
-set laststatus=2
+" set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -444,3 +444,10 @@ map <leader>td <Plug>TaskList
 " Local Vimrc
 let g:localvimrc_whitelist='/home/pricco/sophilabs/.*'
 let g:localvimrc_sandbox=0
+
+" Powerline
+" python from powerline.vim import setup as powerline_setup
+" python powerline_setup()
+" python del powerline_setup
+set laststatus=2
+

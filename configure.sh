@@ -3,6 +3,7 @@ curl -Sso ~/.vim/colors/monokai.vim https://raw.githubusercontent.com/sickill/vi
 git submodule init
 git submodule update
 ln -s  $HOME/.vim/.vimrc $HOME/.vimrc
+vim +BundleInstall +qall
 
 #python
 sudo pip install flake8 jedi
