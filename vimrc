@@ -286,6 +286,15 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vimgrep searching and cope displaying
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Search (custom)
+function! s:Search(text)
+    if exists('a:text')
+        :execute 'vimgrep /'.a:text.'/j **' | copen
+    endif
+endfunction
+command! -nargs=1 Search call s:Search(<f-args>)
+noremap <C-f> :Search 
+
 " When you press gv you vimgrep after the selected text
 vnoremap <silent> gv :call VisualSelection('gv')<CR>
 
