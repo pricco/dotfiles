@@ -23,17 +23,18 @@ Plugin 'scrooloose/syntastic'
 " Powerline is a statusline plugin for vim, and provides statuslines and
 " prompts for several other applications, including zsh, bash, tmux, IPython,
 " Awesome and Qtile.
-Plugin 'Lokaltog/powerline'
+" Plugin 'Lokaltog/powerline'
+" Plugin 'Lokaltog/powerline-fonts'
 
  " Search local vimrc files (.lvimrc) in the tree (root dir up to current
  " dir) and load them.
 Plugin 'embear/vim-localvimrc'
 
 " Lean & mean status/tabline for vim that's light as air
-"Plugin 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 
 " Python
-" Bundle 'klen/python-mode'
+" Python 'klen/python-mode'
 Plugin 'davidhalter/jedi-vim'
 
 " Puppet
@@ -449,5 +450,6 @@ let g:localvimrc_sandbox=0
 " python from powerline.vim import setup as powerline_setup
 " python powerline_setup()
 " python del powerline_setup
-set laststatus=2
+" set laststatus=2
+let g:airline_powerline_fonts=1
 
