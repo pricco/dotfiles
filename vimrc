@@ -11,6 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'Chiel92/vim-autoformat'
 
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-fugitive'
@@ -19,12 +20,6 @@ Plugin 'vim-scripts/TaskList.vim'
 
 " Syntax checking hacks for vim
 Plugin 'scrooloose/syntastic'
-
-" Powerline is a statusline plugin for vim, and provides statuslines and
-" prompts for several other applications, including zsh, bash, tmux, IPython,
-" Awesome and Qtile.
-" Plugin 'Lokaltog/powerline'
-" Plugin 'Lokaltog/powerline-fonts'
 
  " Search local vimrc files (.lvimrc) in the tree (root dir up to current
  " dir) and load them.
@@ -244,16 +239,6 @@ autocmd BufReadPost *
 set viminfo^=%
 
 
-""""""""""""""""""""""""""""""
-" => Status line
-""""""""""""""""""""""""""""""
-" Always show the status line
-" set laststatus=2
-
-" Format the status line
-" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -281,6 +266,11 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
+" for command mode
+nmap <S-Tab> <<
+" " for insert mode
+imap <S-Tab> <Esc><<i
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -425,7 +415,6 @@ let NERDTreeShowHidden=1
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_focus_on_files=1
-let g:nerdtree_tabs_open_on_console_startup=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeWinSize=26
 map  <C-l> :tabn<CR>
@@ -455,10 +444,7 @@ map <leader>td <Plug>TaskList
 let g:localvimrc_whitelist='/home/pricco/sophilabs/.*'
 let g:localvimrc_sandbox=0
 
-" Powerline
-" python from powerline.vim import setup as powerline_setup
-" python powerline_setup()
-" python del powerline_setup
-" set laststatus=2
+" Airline
+set laststatus=2
 let g:airline_powerline_fonts=1
 
