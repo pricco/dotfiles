@@ -15,6 +15,7 @@ Plugin 'Chiel92/vim-autoformat'
 
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'kien/ctrlp.vim'
 
 Plugin 'vim-scripts/TaskList.vim'
 
@@ -37,6 +38,8 @@ Plugin 'rodjek/vim-puppet'
 
 " Less
 Plugin 'groenewege/vim-less'
+
+Plugin 'tpope/vim-commentary'
 
 call vundle#end()
 
@@ -269,8 +272,13 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 " for command mode
 nmap <S-Tab> <<
-" " for insert mode
+" for insert mode
 imap <S-Tab> <Esc><<i
+
+" comment out/in
+nmap <C-c> :Commentary<CR>
+imap <C-c> <Esc>:Commentary<CR><<i
+vmap <C-c> :Commentary<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -284,6 +292,8 @@ function! s:Search(text)
 endfunction
 command! -nargs=1 Search call s:Search(<f-args>)
 noremap <C-f> :Search 
+
+
 
 " When you press gv you vimgrep after the selected text
 vnoremap <silent> gv :call VisualSelection('gv')<CR>
@@ -337,7 +347,14 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 map <leader>q :e ~/buffer<cr>
 
 " Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
+" map <leader>p :setlocal paste!<cr>
+
+vmap <leader>y "*y
+vmap <leader>d "*d
+nmap <leader>p "*p
+nmap <leader>P "*P
+vmap <leader>p "*p
+vmap <leader>P "*P
 
 
 
@@ -447,4 +464,13 @@ let g:localvimrc_sandbox=0
 " Airline
 set laststatus=2
 let g:airline_powerline_fonts=1
+let g:airline_theme='powerlineish'
 
+" Tmux
+" unbind C-b
+" set -g prefix C-Space
+" bind Space send-prefix
+
+" CtrlP
+let g:ctrlp_user_command=['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+let g:ctrlp_use_caching=0
