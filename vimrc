@@ -40,6 +40,7 @@ Plugin 'rodjek/vim-puppet'
 Plugin 'groenewege/vim-less'
 
 Plugin 'tpope/vim-commentary'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 
@@ -474,3 +475,12 @@ let g:airline_theme='powerlineish'
 " CtrlP
 let g:ctrlp_user_command=['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 let g:ctrlp_use_caching=0
+
+" Tmux
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <s-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <s-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <s-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <s-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <s-p>  :TmuxNavigatePrevious<cr>
+
