@@ -30,7 +30,7 @@ Plugin 'embear/vim-localvimrc'
 Plugin 'bling/vim-airline'
 
 " Python
-" Python 'klen/python-mode'
+Plugin 'klen/python-mode'
 Plugin 'davidhalter/jedi-vim'
 
 " Puppet
@@ -430,15 +430,43 @@ set colorcolumn=79
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDTreeIgnore=['\.pyc$', '\.git$', '\.idea$', '__pycache__', '.ropeproject', '.vagrant']
 let NERDTreeShowHidden=1
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
+map <leader>n <plug>NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeWinSize=26
-map  <C-l> :tabn<CR>
-map  <C-h> :tabp<CR>
-map  <C-n> :tabnew<CR>
+map  <S-l> :tabn<CR>
+map  <S-h> :tabp<CR>
+map  <S-n> :tabnew<CR>
 map <F2> :NERDTreeToggle<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" python-mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:pymode=0
+let g:pymode_virtualenv=1 " Auto fix vim python paths if virtualenv enabled        
+let g:pymode_folding=1  " Enable python folding                                 
+let g:pymode_utils_whitespaces=0  " Do not autoremove unused whitespaces        
+map <Leader>rgd :call RopeGotoDefinition()<CR>                                  
+map <Leader>pl :PyLint<CR>                                                      
+let ropevim_enable_shortcuts=1                                                  
+let g:pymode_rope_goto_def_newwin="vnew"                                        
+let g:pymode_rope_extended_complete=1                                           
+let g:pymode_syntax=1                                                           
+let g:pymode_syntax_builtin_objs=0                                              
+let g:pymode_syntax_builtin_funcs=0                                             
+let g:pymode_lint_ignore = "C0110 Exported"  " ignore pep257 missing docstring warning
+let g:pymode_lint_minheight = 5   " Minimal height of pylint error window          
+let g:pymode_lint_maxheight = 15  " Maximal height of pylint error window          
+let g:pymode_lint_write = 0  " Disable pylint checking every save               
+let g:pymode_run_key = "<leader>run"  " default key conflicts with jedi-vim        
+let g:pymode_lint_mccabe_complexity = 10                                        
+let g:pymode_lint_checker="pyflakes,pep8,pep257,mccabe"                         
+let g:pymode_syntax_highlight_self=0  " do not highlight self                   
+let g:pymode_rope_vim_completion=0  " use jedi-vim for completion               
+let g:pymode_rope_guess_project=0                                               
+let g:pymode_doc_key="<leader>k"  " used jedi-vim for help  
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -453,7 +481,7 @@ let g:jedi#rename_command="<leader>r"
 let g:jedi#show_call_signatures="1"
 
 " hide docstring
-autocmd FileType python setlocal completeopt-=preview
+" autocmd FileType python setlocal completeopt-=preview
 
 " TaskList
 map <leader>td <Plug>TaskList
@@ -478,9 +506,9 @@ let g:ctrlp_use_caching=0
 
 " Tmux
 let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <s-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <s-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <s-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <s-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <s-p>  :TmuxNavigatePrevious<cr>
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-p>  :TmuxNavigatePrevious<cr>
 
