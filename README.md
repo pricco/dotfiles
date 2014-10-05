@@ -23,6 +23,10 @@ bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 
 * https://github.com/Chiel92/vim-autoformat
 
+# (~/.zsh)
+
+* http://blog.eexit.net/zsh-open-a-new-window-using-the-last-pwd/
+
 # Sources
 
 * http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
