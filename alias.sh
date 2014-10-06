@@ -17,5 +17,5 @@ alias tw="tmux new-session \; \
           select-pane -L \;"
 alias tvim="tmux new-session 'vim' \; \
             rename-window 'vim' \; \
-            split-window -h -p 40 \; \
+            split-window -h -p 45 \; \
             select-pane -L \;"
