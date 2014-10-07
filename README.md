@@ -1,7 +1,15 @@
 # Requirements
 
+* zsh
+* oh-my-zsh
 * tmux: sudo apt-get install tmux
 * ack: http://beyondgrep.com/install/
+
+# Install
+
+```
+	sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
+```
 
 # Vim Configuration
 
