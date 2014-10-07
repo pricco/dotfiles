@@ -1,8 +1,13 @@
+# Requirements
+
+* tmux: sudo apt-get install tmux
+* ack: http://beyondgrep.com/install/
+
 # Vim Configuration
 
     ./configure.sh
 
-# Fonts (zsh and powerline)
+# Fonts (zsh & vim)
 
 * https://gist.github.com/baopham/1838072
 * https://github.com/Lokaltog/powerline/issues/96
