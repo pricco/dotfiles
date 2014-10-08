@@ -8,7 +8,7 @@
 # Install
 
 ```
-	sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
+	sh -c "`curl -fsSL https://raw.github.com/pricco/dotfiles/master/install.sh`"
 ```
 
 # Vim Configuration
