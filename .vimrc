@@ -73,7 +73,9 @@ nmap <leader>w :w!<cr>
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
+set scrolloff=7
+set sidescrolloff=15
+set sidescroll=1
 
 " Turn on the WiLd menu
 set wildmenu
@@ -146,6 +148,13 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Fold
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set foldmethod=indent   "fold based on indent
+set foldnestmax=3       "deepest fold is 3 levels
+set nofoldenable        "dont fold by default
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -186,6 +195,8 @@ set wrap "Wrap lines
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
+vnoremap < <gv
+vnoremap > >gv
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
