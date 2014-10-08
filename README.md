@@ -1,8 +1,8 @@
 # Requirements
 
-* zsh
-* oh-my-zsh
-* tmux: sudo apt-get install tmux
+* zshi (apt-get)
+* oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh
+* tmux (apt-get)
 * ack: http://beyondgrep.com/install/
 
 # Install
