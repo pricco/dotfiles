@@ -57,8 +57,8 @@
     whitespace = fix
 [core]
     # Use custom `.gitignore` and `.gitattributes`
-    excludesfile = ~/.gitignore
-    attributesfile = ~/.gitattributes
+    excludesfile = ~/.gitignore_global
+    attributesfile = ~/.gitattributes_global
     # Treat spaces before tabs and all kinds of trailing whitespace as an error
     # [default] trailing-space: looks for spaces at the end of a line
     # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
@@ -86,9 +86,6 @@
 [diff]
     # Detect copies as well as renames
     renames = copies
-[help]
-    # Automatically correct and execute mistyped commands
-    autocorrect = 1
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
     log = true

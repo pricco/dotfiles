@@ -68,3 +68,7 @@ alias tvim="tmux new-session 'vim' \; \
             split-window -h -p 45 \; \
             select-pane -L \;"
 
+# GIT
+alias gs="git status"
+alias gci="git commit"
+alias gfo="git fetch origin"
