@@ -159,6 +159,7 @@ set shortmess=I
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
+set foldlevelstart=99
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -449,28 +450,31 @@ map <F2> :NERDTreeToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " python-mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:pymode=0
+let g:pymode=1
 let g:pymode_virtualenv=1 " Auto fix vim python paths if virtualenv enabled
 let g:pymode_folding=1  " Enable python folding
 let g:pymode_utils_whitespaces=0  " Do not autoremove unused whitespaces
 map <Leader>rgd :call RopeGotoDefinition()<CR>
 map <Leader>pl :PyLint<CR>
 let ropevim_enable_shortcuts=1
+let g:pymode_rope=0
+let g:pymode_rope_vim_completion=0  " use jedi-vim for completion
+let g:pymode_rope_guess_project=0
 let g:pymode_rope_goto_def_newwin="vnew"
 let g:pymode_rope_extended_complete=1
 let g:pymode_syntax=1
 let g:pymode_syntax_builtin_objs=0
 let g:pymode_syntax_builtin_funcs=0
-let g:pymode_lint_ignore = "C0110 Exported"  " ignore pep257 missing docstring warning
-let g:pymode_lint_minheight = 5   " Minimal height of pylint error window
-let g:pymode_lint_maxheight = 15  " Maximal height of pylint error window
-let g:pymode_lint_write = 0  " Disable pylint checking every save
-let g:pymode_run_key = "<leader>run"  " default key conflicts with jedi-vim
-let g:pymode_lint_mccabe_complexity = 10
+let g:pymode_lint=0
+let g:pymode_lint_write=0
+let g:pymode_lint_ignore="C0110 Exported"  " ignore pep257 missing docstring warning
+let g:pymode_lint_minheight=5   " Minimal height of pylint error window
+let g:pymode_lint_maxheight=15  " Maximal height of pylint error window
+let g:pymode_lint_write=0  " Disable pylint checking every save
+let g:pymode_lint_mccabe_complexity=10
 let g:pymode_lint_checker="pyflakes,pep8,pep257,mccabe"
+let g:pymode_run_key="<leader>run"  " default key conflicts with jedi-vim
 let g:pymode_syntax_highlight_self=0  " do not highlight self
-let g:pymode_rope_vim_completion=0  " use jedi-vim for completion
-let g:pymode_rope_guess_project=0
 let g:pymode_doc_key="<leader>k"  " used jedi-vim for help
 
 
@@ -484,9 +488,7 @@ let g:jedi#usages_command="<leader>n"
 let g:jedi#completions_command="<C-Space>"
 let g:jedi#rename_command="<leader>r"
 let g:jedi#show_call_signatures="1"
-
-" hide docstring
-" autocmd FileType python setlocal completeopt-=preview
+autocmd FileType python setlocal completeopt-=preview
 
 " TaskList
 map <leader>td <Plug>TaskList
@@ -499,11 +501,6 @@ let g:localvimrc_sandbox=0
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline_theme='powerlineish'
-
-" Tmux
-" unbind C-b
-" set -g prefix C-Space
-" bind Space send-prefix
 
 " CtrlP
 let g:ctrlp_user_command=['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
