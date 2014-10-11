@@ -123,6 +123,7 @@ set showmatch
 set mat=2
 
 " No annoying sound on errors
+" set termencoding=utf-8
 set noerrorbells
 set novisualbell
 set t_vb=

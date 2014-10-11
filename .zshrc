@@ -5,8 +5,16 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="theunraveler"
-ZSH_THEME="wedisagree"
+ZSH_THEME="fwalch"
+# awesomepanda
+# terminalparty
+# wezn
+# superjarin
+# sorin
+# robbyrussel
+# jbergantine
+# gozilla
+# fwalch
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -46,7 +54,7 @@ ZSH_THEME="wedisagree"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -81,13 +89,17 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
+# Powerline
+# POWERLINE_PYTHON=$(python -c "import powerline; print(powerline.__path__[0])")
+#. ${POWERLINE_PYTHON}/bindings/zsh/powerline.zsh
+
 # Python Virtual Environments
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 for file in ~/.{exports,aliases,functions}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file"
+    [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done;
 unset file;
 

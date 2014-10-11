@@ -17,6 +17,8 @@
 
 # Fonts (zsh & vim)
 
+* http://powerline.readthedocs.org/en/latest/installation/linux.html#patched-font-installation
+* http://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig
 * https://gist.github.com/baopham/1838072
 * https://github.com/Lokaltog/powerline/issues/96
 * Mocaco (patched)

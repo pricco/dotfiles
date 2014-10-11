@@ -3,6 +3,7 @@
 DOTFILES=$(dirname "${BASH_SOURCE}")
 
 function install() {
+    sudo  pip install powerline-status flake8 jedi
     cd "$DOTFILES"
     git submodule init
     git submodule update
@@ -10,7 +11,6 @@ function install() {
     curl -Sso "$HOME/.vim/colors/monokai.vim" "https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim"
     rsync --exclude ".git/" --exclude ".gitignore" --exclude ".gitmodules" --exclude "bootstrap.sh" --exclude "install.sh" --exclude "README.md" -avh --no-perms "$DOTFILES" ~
     vim +PluginInstall +qall
-    # sudo pip install flake8 jedi
 }
 
 cd "$DOTFILES"
