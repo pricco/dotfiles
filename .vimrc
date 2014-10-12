@@ -23,6 +23,7 @@ Plugin 'vim-scripts/TaskList.vim'
 Plugin 'sickill/vim-monokai'
 Plugin 'ap/vim-css-color'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'airblade/vim-gitgutter'
 
 " Syntax checking hacks for vim
 Plugin 'scrooloose/syntastic'
@@ -504,7 +505,7 @@ let g:localvimrc_sandbox=0
 " Airline
 set laststatus=2
 let g:airline_powerline_fonts=1
-let g:airline_theme='powerlineish'
+let g:airline_theme='murmur'
 
 " CtrlP
 let g:ctrlp_user_command=['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
@@ -525,3 +526,15 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermfg=NONE ctermbg=237 cterm=NONE guifg=NONE guibg=#3c3d37 gui=NONE
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermfg=NONE ctermbg=237 cterm=NONE guifg=NONE guibg=#3c3d37 gui=NONE
+
+" GIT Gutter
+let g:gitgutter_sign_added='+'
+let g:gitgutter_sign_modified='~'
+let g:gitgutter_sign_removed='_'
+let g:gitgutter_sign_removed_first_line='‾'
+let g:gitgutter_sign_modified_removed='~_'
+
+autocmd VimEnter,Colorscheme * :hi GitGutterAdd  ctermfg=64 ctermbg=64 cterm=NONE guifg=#46830c guibg=#46830c gui=NONE
+autocmd VimEnter,Colorscheme * :hi GitGutterDelete  ctermfg=88 ctermbg=88 cterm=NONE guifg=#8b0807 guibg=#8b0807 gui=NONE
+autocmd VimEnter,Colorscheme * :hi GitGutterChange  ctermfg=24 ctermbg=24 cterm=NONE guifg=#204a87 guibg=#204a87 gui=NONE
+autocmd VimEnter,Colorscheme * :hi GitGutterChangeDelete  ctermfg=24 ctermbg=24 cterm=NONE guifg=#204a87 guibg=#204a87 gui=NONE
