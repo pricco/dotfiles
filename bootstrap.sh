@@ -8,7 +8,6 @@ function install() {
     git submodule init
     git submodule update
     mkdir -p "$HOME/.vim/autoload" "$HOME/.vim/bundle" "$HOME/.vim/colors"
-    curl -Sso "$HOME/.vim/colors/monokai.vim" "https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim"
     rsync --exclude ".git/" --exclude ".gitignore" --exclude ".gitmodules" --exclude "bootstrap.sh" --exclude "install.sh" --exclude "README.md" -avh --no-perms "$DOTFILES" ~
     vim +PluginInstall +qall
 }

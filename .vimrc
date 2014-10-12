@@ -18,8 +18,11 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
-
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'vim-scripts/TaskList.vim'
+Plugin 'sickill/vim-monokai'
+Plugin 'ap/vim-css-color'
+Plugin 'bronson/vim-trailing-whitespace'
 
 " Syntax checking hacks for vim
 Plugin 'scrooloose/syntastic'
@@ -516,3 +519,9 @@ nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <C-p>  :TmuxNavigatePrevious<cr>
 
+" Indent Guides
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermfg=NONE ctermbg=237 cterm=NONE guifg=NONE guibg=#3c3d37 gui=NONE
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermfg=NONE ctermbg=237 cterm=NONE guifg=NONE guibg=#3c3d37 gui=NONE
