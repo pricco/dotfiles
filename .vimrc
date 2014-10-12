@@ -160,10 +160,10 @@ set shortmess=I
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fold
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set foldmethod=indent   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
-set foldlevelstart=99
+set foldmethod=syntax
+set foldlevelstart=1
+set foldnestmax=3
+set foldenable
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -314,7 +314,7 @@ vnoremap <silent> gv :call VisualSelection('gv')<CR>
 map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
 
 " Vimgreps in the current file
-map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
+" map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
 
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
