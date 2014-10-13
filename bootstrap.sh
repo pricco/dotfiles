@@ -3,7 +3,7 @@
 DOTFILES=$(dirname "${BASH_SOURCE}")
 
 function install() {
-    sudo  pip install powerline-status flake8 jedi
+    sudo  pip install powerline-status flake8 jedi term2048
     cd "$DOTFILES"
     git submodule init
     git submodule update
@@ -16,12 +16,12 @@ cd "$DOTFILES"
 git pull origin master
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	install
+    install
 else
 	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
 	echo "";
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		install
+	    install
 	fi
 fi
 unset install

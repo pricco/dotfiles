@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 " Plugins
-" Plugin 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
 " NERDTree
 Plugin 'scrooloose/nerdtree'
@@ -47,6 +47,10 @@ Plugin 'groenewege/vim-less'
 
 Plugin 'tpope/vim-commentary'
 Plugin 'christoomey/vim-tmux-navigator'
+
+" Games
+Plugin 'amix/vim-2048'
+Plugin 'mfumi/snake.vim'
 
 call vundle#end()
 
@@ -291,6 +295,9 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
 
 " for command mode
 nmap <S-Tab> <<
