@@ -544,8 +544,7 @@ let g:gitgutter_sign_added='+'
 let g:gitgutter_sign_modified='~'
 let g:gitgutter_sign_removed='_'
 let g:gitgutter_sign_removed_first_line='‾'
-let g:gitgutter_sign_modified_removed='~_'
-
+let g:gitgutter_sign_modified_removed='*'
 autocmd VimEnter,Colorscheme * :hi GitGutterAdd  ctermfg=64 ctermbg=64 cterm=NONE guifg=#46830c guibg=#46830c gui=NONE
 autocmd VimEnter,Colorscheme * :hi GitGutterDelete  ctermfg=88 ctermbg=88 cterm=NONE guifg=#8b0807 guibg=#8b0807 gui=NONE
 autocmd VimEnter,Colorscheme * :hi GitGutterChange  ctermfg=24 ctermbg=24 cterm=NONE guifg=#204a87 guibg=#204a87 gui=NONE
@@ -557,3 +556,5 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 let g:multi_cursor_start_key='<C-n>'
+
+au BufNewFile,BufRead *.html set filetype=htmldjango
