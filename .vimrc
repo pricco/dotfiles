@@ -229,10 +229,10 @@ map <leader>f /
 map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
-" nmap <M-j> <C-W>j
-" nmap <M-k> <C-W>k
-" nmap <M-h> <C-W>h
-" nmap <M-l> <C-W>l
+nmap <M-j> <C-W>j
+nmap <M-k> <C-W>k
+nmap <M-h> <C-W>h
+nmap <M-l> <C-W>l
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>
@@ -262,9 +262,9 @@ endtry
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
- \ if line("'\"") > 0 && line("'\"") <= line("$") |
- \   exe "normal! g`\"" |
- \ endif
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
 " Remember info about open buffers on close
 set viminfo^=%
 
@@ -282,17 +282,17 @@ map 0 ^
 " vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 if has("mac") || has("macunix")
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
+    nmap <D-j> <M-j>
+    nmap <D-k> <M-k>
+    vmap <D-j> <M-j>
+    vmap <D-k> <M-k>
 endif
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
+    exe "normal mz"
+    %s/\s\+$//ge
+    exe "normal `z"
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
