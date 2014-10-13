@@ -8,14 +8,10 @@
 # Install
 
 ```
-	sh -c "`curl -fsSL https://raw.github.com/pricco/dotfiles/master/install.sh`"
+sh -c "`curl -fsSL https://raw.github.com/pricco/dotfiles/master/install.sh`"
 ```
 
-# Vim Configuration
-
-    ./configure.sh
-
-# Fonts (zsh & vim)
+# Fonts (zsh/vim/tmux)
 
 * http://powerline.readthedocs.org/en/latest/installation/linux.html#patched-font-installation
 * http://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig
@@ -23,16 +19,9 @@
 * https://github.com/Lokaltog/powerline/issues/96
 * Mocaco (patched)
 
-# Format Code
+# Inspiration
 
-* https://github.com/Chiel92/vim-autoformat
-
-# (~/.zsh)
-
-* http://blog.eexit.net/zsh-open-a-new-window-using-the-last-pwd/
-
-# Sources
-
+* https://github.com/mathiasbynens/dotfiles
 * http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 * https://github.com/kien/ctrlp.vim
 * http://nvie.com/posts/how-i-boosted-my-vim/

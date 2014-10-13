@@ -24,6 +24,7 @@ Plugin 'sickill/vim-monokai'
 Plugin 'ap/vim-css-color'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'kristijanhusak/vim-multiple-cursors'
 
 " Syntax checking hacks for vim
 Plugin 'scrooloose/syntastic'
@@ -549,3 +550,10 @@ autocmd VimEnter,Colorscheme * :hi GitGutterAdd  ctermfg=64 ctermbg=64 cterm=NON
 autocmd VimEnter,Colorscheme * :hi GitGutterDelete  ctermfg=88 ctermbg=88 cterm=NONE guifg=#8b0807 guibg=#8b0807 gui=NONE
 autocmd VimEnter,Colorscheme * :hi GitGutterChange  ctermfg=24 ctermbg=24 cterm=NONE guifg=#204a87 guibg=#204a87 gui=NONE
 autocmd VimEnter,Colorscheme * :hi GitGutterChangeDelete  ctermfg=24 ctermbg=24 cterm=NONE guifg=#204a87 guibg=#204a87 gui=NONE
+
+" Multiple cursors
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+let g:multi_cursor_start_key='<C-n>'
