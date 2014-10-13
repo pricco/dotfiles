@@ -8,7 +8,7 @@ function install() {
     git submodule init
     git submodule update
     mkdir -p "$HOME/.vim/autoload" "$HOME/.vim/bundle" "$HOME/.vim/colors"
-    rsync --exclude ".git/" --exclude ".gitignore" --exclude ".gitmodules" --exclude "bootstrap.sh" --exclude "install.sh" --exclude "README.md" -avh --no-perms "$DOTFILES" ~
+    rsync --exclude ".git/" --exclude ".gitignore" --exclude ".gitmodules" --exclude "bootstrap.sh" --exclude "install.sh" --exclude "README.md" --exclude "VIM.md" -avh --no-perms "$DOTFILES" ~
     vim +PluginInstall +qall
 }
 
