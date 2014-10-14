@@ -462,6 +462,15 @@ map <F2> :NERDTreeToggle<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:syntastic_enable_python_checker=1
+let g:syntastic_check_on_open=0
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " python-mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:pymode=1
@@ -479,16 +488,17 @@ let g:pymode_rope_extended_complete=1
 let g:pymode_syntax=1
 let g:pymode_syntax_builtin_objs=0
 let g:pymode_syntax_builtin_funcs=0
+let g:pymode_syntax_highlight_self=0  " do not highlight self
 let g:pymode_lint=0
-let g:pymode_lint_write=0
+let g:pymode_lint_on_write=0
+let g:pymode_lint_unmodified=0
 let g:pymode_lint_ignore="C0110 Exported"  " ignore pep257 missing docstring warning
+let g:pymode_syntax_highlight_self=0  " do not highlight self
 let g:pymode_lint_minheight=5   " Minimal height of pylint error window
 let g:pymode_lint_maxheight=15  " Maximal height of pylint error window
-let g:pymode_lint_write=0  " Disable pylint checking every save
 let g:pymode_lint_mccabe_complexity=10
 let g:pymode_lint_checker="pyflakes,pep8,pep257,mccabe"
 let g:pymode_run_key="<leader>run"  " default key conflicts with jedi-vim
-let g:pymode_syntax_highlight_self=0  " do not highlight self
 let g:pymode_doc_key="<leader>k"  " used jedi-vim for help
 
 
@@ -519,6 +529,8 @@ let g:airline_theme='murmur'
 " CtrlP
 let g:ctrlp_user_command=['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 let g:ctrlp_use_caching=0
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_working_path_mode = 'ra'
 nnoremap <leader>o :CtrlP<cr>
 
 " Tmux
