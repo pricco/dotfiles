@@ -21,6 +21,7 @@ sh -c "`curl -fsSL https://raw.github.com/pricco/dotfiles/master/install.sh`"
 
 # Inspiration
 
+* http://amix.dk/vim/vimrc.html
 * https://github.com/mathiasbynens/dotfiles
 * http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 * https://github.com/kien/ctrlp.vim

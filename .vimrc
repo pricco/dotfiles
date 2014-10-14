@@ -25,6 +25,7 @@ Plugin 'ap/vim-css-color'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kristijanhusak/vim-multiple-cursors'
+Plugin 'jeetsukumaran/vim-numbertoggle'
 
 " Syntax checking hacks for vim
 Plugin 'scrooloose/syntastic'
@@ -557,4 +558,18 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 let g:multi_cursor_start_key='<C-n>'
 
+" Disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+" g:NumberToggleTrigger
+let g:NumberToggleTrigger='<leader>l'
+
+" Django HTML syntax
 au BufNewFile,BufRead *.html set filetype=htmldjango
