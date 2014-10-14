@@ -76,6 +76,17 @@ call vundle#end()
     endif
 """ }}}
 
+" Disable some keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+nnoremap Q <nop>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -125,6 +136,7 @@ set hid
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+set showbreak=↪
 
 " Ignore case when searching
 set ignorecase
@@ -532,26 +544,41 @@ let g:jedi#rename_command="<leader>r"
 let g:jedi#show_call_signatures="1"
 autocmd FileType python setlocal completeopt-=preview
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TaskList
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>td <Plug>TaskList
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Local Vimrc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:localvimrc_whitelist='/home/pricco/sophilabs/.*'
 let g:localvimrc_sandbox=0
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline_theme='murmur'
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_user_command=['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 let g:ctrlp_use_caching=0
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_working_path_mode = 'ra'
 nnoremap <leader>o :CtrlP<cr>
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tmux
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
@@ -559,7 +586,10 @@ nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <C-p>  :TmuxNavigatePrevious<cr>
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indent Guides
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 let g:indent_guides_default_mapping = 0
@@ -570,7 +600,10 @@ let g:indent_guides_guide_size=1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermfg=NONE ctermbg=237 cterm=NONE guifg=NONE guibg=#3c3d37 gui=NONE
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermfg=NONE ctermbg=237 cterm=NONE guifg=NONE guibg=#3c3d37 gui=NONE
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GIT Gutter
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_sign_added='+'
 let g:gitgutter_sign_modified='~'
 let g:gitgutter_sign_removed='_'
@@ -581,25 +614,35 @@ autocmd VimEnter,Colorscheme * :hi GitGutterDelete  ctermfg=88 ctermbg=88 cterm=
 autocmd VimEnter,Colorscheme * :hi GitGutterChange  ctermfg=24 ctermbg=24 cterm=NONE guifg=#204a87 guibg=#204a87 gui=NONE
 autocmd VimEnter,Colorscheme * :hi GitGutterChangeDelete  ctermfg=24 ctermbg=24 cterm=NONE guifg=#204a87 guibg=#204a87 gui=NONE
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Multiple cursors
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 let g:multi_cursor_start_key='<C-n>'
 
-" Disable arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
 
-" g:NumberToggleTrigger
-let g:NumberToggleTrigger='<leader>l'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NumberToggleTrigger
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:NumberToggleTrigger='<f3>'
 
-" Django HTML syntax
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>l :SyntasticCheck<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" HTML
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufNewFile,BufRead *.html set filetype=htmldjango
+au BufNewFile,BufRead *.html set colorcolumn=-1
+
+
+
+
