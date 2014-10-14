@@ -43,8 +43,8 @@ Plugin 'jeetsukumaran/vim-numbertoggle'
 " Syntax checking hacks for vim
 Plugin 'scrooloose/syntastic'
 
- " Search local vimrc files (.lvimrc) in the tree (root dir up to current
- " dir) and load them.
+ " Search local vimrc files (.lvimrc) in the tree
+ " (root dir up to current dir) and load them.
 Plugin 'embear/vim-localvimrc'
 
 " Lean & mean status/tabline for vim that's light as air
@@ -69,7 +69,12 @@ Plugin 'mfumi/snake.vim'
 
 call vundle#end()
 
-" Copy from http://amix.dk/vim/vimrc.html
+""" Installing plugins the first time, quits when done {{{
+    if has_vundle == 0
+        :silent! PluginInstall
+        :qa
+    endif
+""" }}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
