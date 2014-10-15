@@ -3,7 +3,7 @@
 * zshi (apt-get)
 * oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh
 * tmux (apt-get)
-* ack: http://beyondgrep.com/install/
+* ag: silversearcher-ag (apt-get)
 
 # Install
 

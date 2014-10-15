@@ -20,48 +20,107 @@ call vundle#begin()
 " Plugins
 Plugin 'gmarik/Vundle.vim'
 
-" NERDTree
+" Navigation
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'vim-scripts/ack.vim'
-
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'vim-scripts/TaskList.vim'
-Plugin 'sickill/vim-monokai'
-Plugin 'ap/vim-css-color'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'airblade/vim-gitgutter'
+
+" Search
+Plugin 'rking/ag.vim'
+Plugin 'vim-scripts/IndexedSearch'
+Plugin 'skwp/greplace.vim'
+Plugin 'Lokaltog/vim-easymotion'
+
+" Helper
 Plugin 'kristijanhusak/vim-multiple-cursors'
-Plugin 'jeetsukumaran/vim-numbertoggle'
-
-" Syntax checking hacks for vim
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'tpope/vim-commentary'
+Plugin 'Chiel92/vim-autoformat'
 Plugin 'scrooloose/syntastic'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'Shougo/neocomplete'
+Plugin 'briandoll/change-inside-surroundings.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'Keithbsmiley/investigate.vim'
+" Plugin 'bogado/file-line'
+Plugin 'mattn/webapi-vim'
 
- " Search local vimrc files (.lvimrc) in the tree
- " (root dir up to current dir) and load them.
-Plugin 'embear/vim-localvimrc'
+" Plugin 'sjl/gundo.vim'
+" Plugin 'skwp/YankRing.vim'
+" Plugin 'tomtom/tlib_vim'
+" Plugin 'tpope/vim-abolish'
+" Plugin 'tpope/vim-endwise'
+" Plugin 'tpope/vim-ragtag'
+" Plugin 'tpope/vim-repeat'
+" Plugin 'tpope/vim-surround'
+" Plugin 'tpope/vim-unimpaired'
+" Plugin 'vim-scripts/AnsiEsc.vim'
+" Plugin 'vim-scripts/AutoTag'
+" Plugin 'vim-scripts/lastpos.vim'
+" Plugin 'vim-scripts/sudo.vim'
+" Plugin 'goldfeld/ctrlr.vim'
 
-" Lean & mean status/tabline for vim that's light as air
+" Snippets
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
+" Appearance
+Plugin 'sickill/vim-monokai'
+Plugin 'jeetsukumaran/vim-numbertoggle'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'bling/vim-airline'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'chrisbra/Colorizer'
+
+" Git
+Plugin 'tpope/vim-fugitive'
+Plugin 'gregsexton/gitv'
+Plugin 'mattn/gist-vim'
+Plugin 'tpope/vim-git' " Syntax hightlighting
+
+" Misc
+Plugin 'vim-scripts/TaskList.vim'
+Plugin 'embear/vim-localvimrc'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'mattn/emmet-vim'
 
 " Python
 Plugin 'klen/python-mode'
 Plugin 'davidhalter/jedi-vim'
 
 " Puppet
-Plugin 'rodjek/vim-puppet'
+Plugin 'rodjek/vim-puppet' " Syntax highlighting
 
-" Less
+" CSS, Sass, Less, Stylus...
 Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-haml'
 
-Plugin 'tpope/vim-commentary'
+" Jade
+Plugin 'digitaltoad/vim-jade.git'
+
+" Tmux
+Plugin 'jby/tmux.vim' " Syntax highlighing
 Plugin 'christoomey/vim-tmux-navigator'
+
+" Markdown
+Plugin 'jtratner/vim-flavored-markdown.git'
+Plugin 'nelstrom/vim-markdown-preview'
+
+" HTML
+Plugin 'skwp/vim-html-escape'
+
+" Javascript and CofeeScript
+Plugin 'briancollins/vim-jst'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'itspriddle/vim-jquery.git'
+Plugin 'kchmck/vim-coffee-script'
 
 " Games
 Plugin 'amix/vim-2048'
@@ -345,7 +404,7 @@ vmap <C-c> :Commentary<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vimgrep searching and cope displaying
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-noremap <C-f> :Ack<space>
+noremap <C-f> :Ag<space>
 
 " When you press gv you vimgrep after the selected text
 vnoremap <silent> gv :call VisualSelection('gv')<CR>
@@ -644,5 +703,14 @@ au BufNewFile,BufRead *.html set filetype=htmldjango
 au BufNewFile,BufRead *.html set colorcolumn=-1
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Session
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:session_autoload='no'
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" EasyMotion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap s <Plug>(easymotion-s2)
+nmap t <Plug>(easymotion-t2)
