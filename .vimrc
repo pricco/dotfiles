@@ -41,26 +41,24 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'Raimondi/delimitMate'
-Plugin 'Shougo/neocomplete'
-Plugin 'briandoll/change-inside-surroundings.vim'
+"Plugin 'Shougo/neocomplete'
+"Plugin 'briandoll/change-inside-surroundings.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'Keithbsmiley/investigate.vim'
 " Plugin 'bogado/file-line'
 Plugin 'mattn/webapi-vim'
 
-" Plugin 'sjl/gundo.vim'
-" Plugin 'skwp/YankRing.vim'
+Plugin 'sjl/gundo.vim'
 " Plugin 'tomtom/tlib_vim'
-" Plugin 'tpope/vim-abolish'
-" Plugin 'tpope/vim-endwise'
-" Plugin 'tpope/vim-ragtag'
-" Plugin 'tpope/vim-repeat'
-" Plugin 'tpope/vim-surround'
-" Plugin 'tpope/vim-unimpaired'
-" Plugin 'vim-scripts/AnsiEsc.vim'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-scripts/AnsiEsc.vim'
 " Plugin 'vim-scripts/AutoTag'
-" Plugin 'vim-scripts/lastpos.vim'
-" Plugin 'vim-scripts/sudo.vim'
+Plugin 'vim-scripts/lastpos.vim'
+Plugin 'vim-scripts/sudo.vim'
 " Plugin 'goldfeld/ctrlr.vim'
 
 " Snippets
@@ -125,6 +123,7 @@ Plugin 'kchmck/vim-coffee-script'
 " Games
 Plugin 'amix/vim-2048'
 Plugin 'mfumi/snake.vim'
+
 
 call vundle#end()
 
@@ -431,8 +430,8 @@ vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 "
 map <leader>cc :botright cope<cr>
 map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
-map <leader>n :cn<cr>
-map <leader>p :cp<cr>
+" map <leader>n :cn<cr>
+" map <leader>p :cp<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -460,13 +459,12 @@ map <leader>q :e ~/buffer<cr>
 " Toggle paste mode on and off
 " map <leader>p :setlocal paste!<cr>
 
-vmap <leader>y "*y
-vmap <leader>d "*d
-nmap <leader>p "*p
-nmap <leader>P "*P
-vmap <leader>p "*p
-vmap <leader>P "*P
-
+vmap <leader>y "+y
+vmap <leader>d "+d
+nmap <leader>p "+p
+nmap <leader>P "+P
+vmap <leader>p "+p
+vmap <leader>P "+P
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -531,8 +529,9 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nu
+set number
 set colorcolumn=79
+set cursorline
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerdtree
@@ -540,8 +539,8 @@ set colorcolumn=79
 let NERDTreeIgnore=['\.pyc$', '\.git$', '\.idea$', '__pycache__', '.ropeproject', '.vagrant']
 let NERDTreeShowHidden=1
 map <leader>n <plug>NERDTreeTabsToggle<CR>
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_focus_on_files=1
+"let g:nerdtree_tabs_open_on_console_startup=1
+""let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeWinSize=26
 map  <S-l> :tabn<CR>
@@ -567,7 +566,7 @@ let g:pymode_virtualenv=1 " Auto fix vim python paths if virtualenv enabled
 let g:pymode_folding=1  " Enable python folding
 let g:pymode_utils_whitespaces=0  " Do not autoremove unused whitespaces
 map <Leader>rgd :call RopeGotoDefinition()<CR>
-map <Leader>pl :PyLint<CR>
+" map <Leader>pl :PyLint<CR>
 let ropevim_enable_shortcuts=1
 let g:pymode_rope=0
 let g:pymode_rope_vim_completion=0  " use jedi-vim for completion
@@ -622,7 +621,7 @@ let g:localvimrc_sandbox=0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set laststatus=2
 let g:airline_powerline_fonts=1
-let g:airline_theme='murmur'
+let g:airline_theme='powerlineish'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -700,7 +699,7 @@ nnoremap <leader>l :SyntasticCheck<cr>
 " HTML
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufNewFile,BufRead *.html set filetype=htmldjango
-au BufNewFile,BufRead *.html set colorcolumn=-1
+" au BufNewFile,BufRead *.html set colorcolumn=-1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
