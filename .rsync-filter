@@ -1,9 +1,9 @@
-exclude/
-.git/
-.gitignore
-.gitmodules
-bootstrap.sh
-install.sh
-README.md
-VIM.md
-
+exclude .rsync-filter
+exclude exclude/
+exclude .git/
+exclude .gitignore
+exclude .gitmodules
+exclude bootstrap.sh
+exclude install.sh
+exclude README.md
+exclude VIM.md

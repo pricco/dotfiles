@@ -3,8 +3,6 @@
 DOTFILES_DIR="$HOME/.dotfiles"
 DOTFILES_GIT="git://github.com/pricco/dotfiles.git"
 
-SPF13VIM_DIR="$DOTFILES/exclude/spf13-vim/"
-
 VUNDLE_DIR="$HOME/.vim/bundle/vundle"
 VUNDLE_GIT="git://github.com/gmarik/vundle.git"
 
@@ -63,13 +61,14 @@ clone_vundle() {
 }
 
 sync_dotfiles() {
-    rsync -F -avh --no-perms "$DOTFILES" "$HOME"
+    cd "$DOTFILES_DIR" &&
+    rsync -FL -rptgoD -q --no-perms "$DOTFILES_DIR" "$HOME"
     ret="$?"
     success "$1"
 }
 
 install_deps() {
-    sudo pip install powerline-status flake8 jedi term2048
+    sudo pip install -q  powerline-status flake8 jedi term2048
     ret="$?"
     success "$1"
 }
@@ -78,7 +77,7 @@ setup_vundle() {
     system_shell="$SHELL"
     export SHELL='/bin/sh'
     vim \
-        -u "$VUNDLE_DIR/.vimrc.bundles.default" \
+        -u "$HOME/.vimrc.bundles.default" \
         "+set nomore" \
         "+BundleInstall!" \
         "+BundleClean" \
@@ -90,6 +89,8 @@ setup_vundle() {
 install() {
     program_exists "vim" "Sorry, we cannot continue without VIM, please install it first."
     program_exists "git" "Sorry, we cannot continue without GIT, please install it first."
+    program_exists "rsync" "Sorry, we cannot continue without RSYNC, please install it first."
+    program_exists "pip" "Sorry, we cannot continue without PIP, please install it first."
 
     clone_dotfiles "Successfully cloned dotfiles"
     clone_vundle "Successfully cloned vundle"
