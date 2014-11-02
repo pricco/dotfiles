@@ -1,0 +1,9 @@
+exclude/
+.git/
+.gitignore
+.gitmodules
+bootstrap.sh
+install.sh
+README.md
+VIM.md
+
