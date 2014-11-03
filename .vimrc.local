@@ -35,7 +35,7 @@
         " set foldnestmax=3
         " set foldenable
         set smarttab
-        set simalt
+        set si
         noremap <C-f> :Ack<space>
 
         " Visual mode pressing * or # searches for the current selection
