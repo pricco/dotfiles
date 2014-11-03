@@ -101,9 +101,13 @@ install() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
     install
 else
-    read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
-    echo "";
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        install
+    if [ "$1" == "--sync" -o "$1" == "-s" ]; then
+        sync_dotfiles "Successfulle sync dotfiles"
+    else
+        read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
+        echo "";
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            install
+        fi
     fi
 fi

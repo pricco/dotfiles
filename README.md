@@ -38,6 +38,8 @@ sh -c "`curl -fsSL https://raw.github.com/pricco/dotfiles/master/bootstrap.sh`"
 * `<leader>y` Cut to clipboard
 * `<leader>p` Paste from clipboard
 * `<s-tab>` Indent
+* `<leader>o` CtrlP
+* `<leader>fu` CtrlPFunky
 
 ## Tabs
 * `<s-l>` Switch right tab

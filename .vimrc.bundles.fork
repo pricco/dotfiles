@@ -1,0 +1,12 @@
+" vimrc.bundles.fork {
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker nospell:
+"
+" }
+
+if count(g:spf13_bundle_groups, 'color-monokai')
+    Bundle 'sickill/vim-monokai'
+endif
+
+if count(g:spf13_bundle_groups, 'general')
+    Bundle 'myusuf3/numbers.vim'
+endif
