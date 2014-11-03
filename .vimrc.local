@@ -5,40 +5,180 @@
 
 " General {
 
-     " Disable some keys
-    map <up> <nop>
-    map <down> <nop>
-    map <left> <nop>
-    map <right> <nop>
-    imap <up> <nop>
-    imap <down> <nop>
-    imap <left> <nop>
-    imap <right> <nop>
-    nnoremap Q <nop>
+     " Disable some keys {
+        map <up> <nop>
+        map <down> <nop>
+        map <left> <nop>
+        map <right> <nop>
+        imap <up> <nop>
+        imap <down> <nop>
+        imap <left> <nop>
+        imap <right> <nop>
+        nnoremap Q <nop>
+    " }
 
-    set sidescrolloff=15
-    set sidescroll=1
-    set cmdheight=2
-    set mouse=""
+    " Misc {
+        colorscheme monokai
+        set sidescrolloff=15
+        set sidescroll=1
+        set cmdheight=2
+        set mouse=""
+        set showbreak=↪
+        set noerrorbells
+        set novisualbell
+        set ffs=unix,dos,mac
+        set nospell
+        nmap <leader>w :w!<cr>
 
-    colorscheme monokai
-    set nospell
-    nmap <leader>w :w!<cr>
+        " set foldmethod=syntax
+        " set foldlevelstart=1
+        " set foldnestmax=3
+        " set foldenable
+        set smarttab
+        set simalt
+        noremap <C-f> :Ack<space>
+
+        " Visual mode pressing * or # searches for the current selection
+        " Super useful! From an idea by Michael Naumann
+        vnoremap <silent> * :call VisualSelection('f')<CR>
+        vnoremap <silent> # :call VisualSelection('b')<CR>
+
+        " Disable highlight when <leader><cr> is pressed
+        map <silent> <leader><cr> :noh<cr>
+
+        " Close the current buffer
+        map <leader>bd :Bclose<cr>
+        " Close all the buffers
+        map <leader>ba :1,1000 bd!<cr>
+
+        " Switch CWD to the directory of the open buffer
+        map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+        " Allow saving of files as sudo when I forgot to start vim using sudo.
+        cmap w!! w !sudo tee > /dev/null %
+
+        " for command mode
+        nmap <S-Tab> <<
+        " for insert mode
+        imap <S-Tab> <Esc><<i
+
+        " When you press gv you vimgrep after the selected text
+        vnoremap <silent> gv :call VisualSelection('gv')<CR>
+
+        " When you press <leader>r you can search and replace the selected text
+        vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
+
+        " Pressing ,ss will toggle and untoggle spell checking
+        map <leader>ss :setlocal spell!<cr>
+
+        " Quickly open a buffer for scripbble
+        map <leader>q :e ~/buffer<cr
+
+
+        " Comment out/in
+        nmap <C-c> :Commentary<CR>
+        imap <C-c> <Esc>:Commentary<CR><<i
+        vmap <C-c> :Commentary<CR>
+
+        " Paste
+        vmap <leader>y "+y
+        vmap <leader>d "+d
+        nmap <leader>p "+p
+        nmap <leader>P "+P
+        vmap <leader>p "+p
+        vmap <leader>P "+P
+
+    " }
 
 " }
 
 " Statusline {
-
     set laststatus=2
     let g:airline_theme='powerlineish'
-
 " }
 
 " CtrlP {
-
     let g:ctrlp_use_caching=0
     let g:ctrlp_clear_cache_on_exit = 0
     let g:ctrlp_working_path_mode = 'ra'
     nnoremap <leader>o :CtrlP<cr>
+" }
 
+" Tmux {
+    let g:tmux_navigator_no_mappings = 1
+    nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+    nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+    nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+    nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+    nnoremap <silent> <C-p> :TmuxNavigatePrevious<cr>
+" }
+
+" NERDTree {
+    map <leader>n <plug>NERDTreeTabsToggle<CR>
+    let g:NERDTreeMinimalUI=1
+    let g:NERDTreeWinSize=26
+" }
+
+" Syntastic {
+    let g:syntastic_check_on_open=0
+    let g:syntastic_error_symbol = "✗"
+    let g:syntastic_warning_symbol = "⚠"
+    nnoremap <leader>l :SyntasticCheck<cr>
+" }
+
+" Pymode {
+    " let g:pymode=1
+    " let g:pymode_virtualenv=1 " Auto fix vim python paths if virtualenv enabled
+    " let g:pymode_folding=1 " Enable python folding
+    " let g:pymode_utils_whitespaces=0 " Do not autoremove unused whitespaces
+    " map <Leader>rgd :call RopeGotoDefinition()<CR>
+    " " map <Leader>pl :PyLint<CR>
+    " let ropevim_enable_shortcuts=1
+    " let g:pymode_rope=0
+    " let g:pymode_rope_vim_completion=0 " use jedi-vim for completion
+    " let g:pymode_rope_guess_project=0
+    " let g:pymode_rope_goto_def_newwin="vnew"
+    " let g:pymode_rope_extended_complete=1
+    " let g:pymode_syntax=1
+    " let g:pymode_syntax_builtin_objs=0
+    " let g:pymode_syntax_builtin_funcs=0
+    " let g:pymode_syntax_highlight_self=0 " do not highlight self
+    " let g:pymode_lint=0
+    " let g:pymode_lint_on_write=0
+    " let g:pymode_lint_unmodified=0
+    " let g:pymode_lint_ignore="C0110 Exported" " ignore pep257 missing docstring warning
+    " let g:pymode_syntax_highlight_self=0 " do not highlight self
+    " let g:pymode_lint_minheight=5 " Minimal height of pylint error window
+    " let g:pymode_lint_maxheight=15 " Maximal height of pylint error window
+    " let g:pymode_lint_mccabe_complexity=10
+    " let g:pymode_lint_checker="pyflakes,pep8,pep257,mccabe"
+    " let g:pymode_run_key="<leader>run" " default key conflicts with jedi-vim
+    " let g:pymode_doc_key="<leader>k" " used jedi-vim for help
+" }
+
+" Local Vimrc {
+    let g:localvimrc_whitelist='/home/pricco/sophilabs/.*'
+    let g:localvimrc_sandbox=0
+" }
+
+" Indent Guides {
+    let g:indent_guides_default_mapping=0
+    let g:indent_guides_auto_colors = 0
+    let g:indent_guides_exclude_filetypes=['help', 'nerdtree']
+    nmap <silent> <Leader>ig <Plug>IndentGuidesToggle
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermfg=NONE ctermbg=237 cterm=NONE guifg=NONE guibg=#3c3d37 gui=NONE
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermfg=NONE ctermbg=237 cterm=NONE guifg=NONE guibg=#3c3d37 gui=NONE
+" }
+
+" EasyMotion {
+    nmap s <Plug>(easymotion-s2)
+    nmap t <Plug>(easymotion-t2)
+" }
+
+" Multiple Cursors {
+    let g:multi_cursor_next_key='<C-n>'
+    let g:multi_cursor_prev_key='<C-p>'
+    let g:multi_cursor_skip_key='<C-x>'
+    let g:multi_cursor_quit_key='<Esc>'
+    let g:multi_cursor_start_key='<C-n>'
 " }

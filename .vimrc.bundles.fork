@@ -8,5 +8,21 @@ if count(g:spf13_bundle_groups, 'color-monokai')
 endif
 
 if count(g:spf13_bundle_groups, 'general')
+    Bundle 'Xuyuanp/nerdtree-git-plugin'
     Bundle 'myusuf3/numbers.vim'
+    Bundle 'embear/vim-localvimrc'
+    Bundle 'editorconfig/editorconfig-vim'
+endif
+
+if count(g:spf13_bundle_groups, 'git')
+    Bundle 'tpope/vim-git'
+endif
+
+if count(g:spf13_bundle_groups, 'jade')
+    Bundle 'digitaltoad/vim-jade.git'
+endif
+
+if count(g:spf13_bundle_groups, 'tmux')
+    Bundle 'jby/tmux.vim'
+    Bundle 'christoomey/vim-tmux-navigator'
 endif

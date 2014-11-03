@@ -10,6 +10,6 @@ let g:spf13_no_autochdir=1
 let g:spf13_noninvasive_completion=1
 let g:spf13_no_conceal=1
 let g:spf13_no_autochdir=1
-let g:spf13_bundle_groups=['general', 'writing', 'neocomplcache', 'programming', 'python', 'javascript', 'html', 'misc', 'puppet', 'color-monokai',]
+let g:spf13_bundle_groups=['general', 'writing', 'neocomplcache', 'programming', 'python', 'javascript', 'html', 'misc', 'puppet', 'color-monokai', 'git', 'jade', 'tmux',]
 
 let g:airline_powerline_fonts=1
