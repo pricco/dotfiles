@@ -61,14 +61,13 @@ clone_vundle() {
 }
 
 sync_dotfiles() {
-    cd "$DOTFILES_DIR" &&
-    rsync -FL -rptgoD -q --no-perms "$DOTFILES_DIR" "$HOME"
+    rsync -FLa /home/pricco/.dotfiles/ /home/pricco/
     ret="$?"
     success "$1"
 }
 
 install_deps() {
-    sudo pip install -q  powerline-status flake8 jedi term2048
+    sudo pip install -q powerline-status flake8 jedi term2048
     ret="$?"
     success "$1"
 }
@@ -102,9 +101,9 @@ install() {
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
     install
 else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
-	echo "";
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
-	    install
-	fi
+    read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
+    echo "";
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        install
+    fi
 fi
