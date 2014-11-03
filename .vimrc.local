@@ -117,6 +117,7 @@
     map <leader>n <plug>NERDTreeTabsToggle<CR>
     let g:NERDTreeMinimalUI=1
     let g:NERDTreeWinSize=26
+    map <F2> :NERDTreeToggle<CR>
 " }
 
 " Syntastic {
