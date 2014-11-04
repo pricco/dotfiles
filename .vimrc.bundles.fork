@@ -26,3 +26,7 @@ if count(g:spf13_bundle_groups, 'tmux')
     Bundle 'jby/tmux.vim'
     Bundle 'christoomey/vim-tmux-navigator'
 endif
+
+if count(g:spf13_bundle_groups, 'python')
+    Bundle 'davidhalter/jedi-vim'
+endif
