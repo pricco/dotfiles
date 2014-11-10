@@ -11,6 +11,8 @@
 sh -c "`curl -fsSL https://raw.github.com/pricco/dotfiles/master/bootstrap.sh`"
 ```
 
+* TMUX: `Ctrl+a I` (to install plugins)
+
 # Fonts (zsh/vim/tmux)
 
 * http://powerline.readthedocs.org/en/latest/installation/linux.html#patched-font-installation
