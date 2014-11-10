@@ -1,3 +1,6 @@
 [submodule "exclude/spf13-vim"]
 	path = exclude/spf13-vim
 	url = git@github.com:spf13/spf13-vim.git
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = git@github.com:tmux-plugins/tpm.git

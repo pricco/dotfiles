@@ -1,3 +1,4 @@
 .vim/autoload/*
 .vim/colors/*
 .vim/bundle/*
+.tmux/plugins/*

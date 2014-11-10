@@ -1,6 +1,5 @@
 " vimrc.before.fork {
-" " vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker nospell:
-"
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker nospell:
 " }
 
 let g:spf13_leader="\<Space>"
