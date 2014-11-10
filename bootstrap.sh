@@ -93,7 +93,7 @@ install() {
 
     clone_dotfiles "Successfully cloned dotfiles"
     clone_vundle "Successfully cloned vundle"
-    sync_dotfiles "Successfulle sync dotfiles"
+    sync_dotfiles "Successfully sync dotfiles"
     install_deps "Successfully installed dependencies"
     setup_vundle "Now updating/installing plugins using Vundle"
 }
@@ -102,7 +102,7 @@ if [ "$1" == "--force" -o "$1" == "-f" ]; then
     install
 else
     if [ "$1" == "--sync" -o "$1" == "-s" ]; then
-        sync_dotfiles "Successfulle sync dotfiles"
+        sync_dotfiles "Successfully sync dotfiles"
     else
         read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
         echo "";
