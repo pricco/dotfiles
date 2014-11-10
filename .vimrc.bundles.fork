@@ -12,6 +12,7 @@ if count(g:spf13_bundle_groups, 'general')
     Bundle 'embear/vim-localvimrc'
     Bundle 'editorconfig/editorconfig-vim'
     UnBundle 'vim-scripts/sessionman.vim'
+    UnBundle 'altercation/vim-colors-solarized'
 endif
 
 if count(g:spf13_bundle_groups, 'git')
