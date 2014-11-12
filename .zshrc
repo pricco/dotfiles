@@ -29,7 +29,7 @@ ZSH_THEME="fwalch"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -54,7 +54,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux virtualenv archlinux)
+plugins=(git tmux archlinux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -92,6 +92,8 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # Powerline
 # POWERLINE_PYTHON=$(python -c "import powerline; print(powerline.__path__[0])")
 #. ${POWERLINE_PYTHON}/bindings/zsh/powerline.zsh
+
+export TERM="xterm-256color"
 
 # Python Virtual Environments
 export WORKON_HOME=$HOME/.virtualenvs

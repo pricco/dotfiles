@@ -13,7 +13,6 @@ if count(g:spf13_bundle_groups, 'general')
     Bundle 'editorconfig/editorconfig-vim'
     UnBundle 'vim-scripts/sessionman.vim'
     UnBundle 'altercation/vim-colors-solarized'
-    Bundle 'bruno-/vim-alt-mappings'
 endif
 
 if count(g:spf13_bundle_groups, 'git')
