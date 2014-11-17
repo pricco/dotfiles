@@ -285,7 +285,7 @@
           \ 'win'  : '#W',
           \ 'cwin' : '#W',
           \ 'x'    : '#{battery_icon} #{battery_percentage}',
-          \ 'y'    : '%y/%m/%d %H:%M',
+          \ 'y'    : '%Y-%m-%d %H:%M',
           \ 'z'    : '#H '
           \ }
 " }
