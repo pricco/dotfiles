@@ -116,6 +116,13 @@
         vmap <leader>p "+p
         vmap <leader>P "+P
 
+        " Switch split
+        noremap w <C-w><C-w>
+    " }
+
+" }
+
+" Completion {
         set completeopt=longest,menuone
         inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
         inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
@@ -125,8 +132,6 @@
         " open user completion menu closing previous if open and opening new menu without changing the text
         inoremap <expr> <S-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
                     \ '<C-x><C-u><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
-    " }
-
 " }
 
 " Statusline {
@@ -152,11 +157,11 @@
 
 " Tmux {
     let g:tmux_navigator_no_mappings = 1
-    nnoremap <silent> h :TmuxNavigateLeft<CR>
-    nnoremap <silent> j :TmuxNavigateDown<CR>
-    nnoremap <silent> k :TmuxNavigateUp<CR>
-    nnoremap <silent> l :TmuxNavigateRight<CR>
-    nnoremap <silent> \ :TmuxNavigatePrevious<CR>
+    noremap <silent> h :TmuxNavigateLeft<CR>
+    noremap <silent> j :TmuxNavigateDown<CR>
+    noremap <silent> k :TmuxNavigateUp<CR>
+    noremap <silent> l :TmuxNavigateRight<CR>
+    noremap <silent> \ :TmuxNavigatePrevious<CR>
 " }
 
 " NERDTree {
@@ -264,7 +269,7 @@
 
 " Signify {
     let g:signify_sign_add = '+'
-    let g:signify_sign_delete_first_line = '‾'
+    let g:signify_sign_delete_first_line = '-'
     let g:signify_sign_change = '!'
     let g:signify_sign_changedelete = '!'
     let g:signify_sign_show_count = 0
@@ -276,7 +281,7 @@
           \ 'a'    : '#S',
           \ 'win'  : '#W',
           \ 'cwin' : '#W',
-          \ 'x'    : '#{battery_icon}#{battery_percentage}',
+          \ 'x'    : '#{battery_icon} #{battery_percentage}',
           \ 'y'    : '%y/%m/%d %H:%M',
           \ 'z'    : '#H '
           \ }
