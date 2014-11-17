@@ -116,8 +116,6 @@
         vmap <leader>p "+p
         vmap <leader>P "+P
 
-        " Switch split
-        noremap w <C-w><C-w>
     " }
 
 " }
@@ -155,13 +153,18 @@
     nnoremap <leader>o :CtrlP<CR>
 " }
 
-" Tmux {
-    let g:tmux_navigator_no_mappings = 1
-    noremap <silent> h :TmuxNavigateLeft<CR>
-    noremap <silent> j :TmuxNavigateDown<CR>
-    noremap <silent> k :TmuxNavigateUp<CR>
-    noremap <silent> l :TmuxNavigateRight<CR>
-    noremap <silent> \ :TmuxNavigatePrevious<CR>
+" Windows, Panes, Tabs and Splits {
+
+    " Switch Window
+    noremap <silent> w call system('tmux select-window -t :+')
+
+    " Switch Pane
+    noremap <silent> p call system('tmux select-pane -t :.+')
+
+    " Switch Tab
+    noremap t gt
+    " Switch Split
+    noremap s <C-w><C-w>
 " }
 
 " NERDTree {
