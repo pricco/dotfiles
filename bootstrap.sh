@@ -67,7 +67,7 @@ sync_dotfiles() {
 }
 
 install_deps() {
-    sudo pip install -q powerline-status flake8 jedi term2048
+    sudo pip install -q flake8 jedi term2048
     ret="$?"
     success "$1"
 }

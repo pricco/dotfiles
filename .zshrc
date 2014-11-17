@@ -89,10 +89,6 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-# Powerline
-# POWERLINE_PYTHON=$(python -c "import powerline; print(powerline.__path__[0])")
-#. ${POWERLINE_PYTHON}/bindings/zsh/powerline.zsh
-
 export TERM="xterm-256color"
 
 # Python Virtual Environments

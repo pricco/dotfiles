@@ -49,6 +49,7 @@
 
     " Appearance {
         colorscheme monokai
+        set shortmess=I
     " }
 
     " General {
@@ -130,12 +131,16 @@
 
 " Statusline {
     set laststatus=2
-    let g:airline_theme='powerlineish'
-    let g:airline#extensions#tabline#enabled=1
-    let g:airline#extensions#tabline#show_buffers=0
+    let g:airline_theme='monokai'
+    let g:airline#extensions#tmuxline#enabled = 0
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#show_buffers = 0
     let g:airline#extensions#tabline#left_sep = ' '
     let g:airline#extensions#tabline#left_alt_sep = '|'
-    let g:airline#extensions#bufferline#enabled=0
+    let g:airline#extensions#tabline#show_tab_nr = 0
+    let g:airline#extensions#tabline#show_tab_type = 0
+    let g:airline#extensions#tabline#show_close_button = 0
+    let g:airline#extensions#bufferline#enabled = 0
 " }
 
 " CtrlP {
@@ -147,10 +152,11 @@
 
 " Tmux {
     let g:tmux_navigator_no_mappings = 1
-    nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
-    nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
-    nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
-    nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
+    nnoremap <silent> h :TmuxNavigateLeft<CR>
+    nnoremap <silent> j :TmuxNavigateDown<CR>
+    nnoremap <silent> k :TmuxNavigateUp<CR>
+    nnoremap <silent> l :TmuxNavigateRight<CR>
+    nnoremap <silent> \ :TmuxNavigatePrevious<CR>
 " }
 
 " NERDTree {
@@ -254,4 +260,24 @@
 
 " Snippets {
     let g:snips_author = 'Pablo Ricco <pricco@gmail.com>'
+" }
+
+" Signify {
+    let g:signify_sign_add = '+'
+    let g:signify_sign_delete_first_line = '‾'
+    let g:signify_sign_change = '!'
+    let g:signify_sign_changedelete = '!'
+    let g:signify_sign_show_count = 0
+" }
+
+" Tmuxline {
+    let g:tmuxline_theme = 'monokai'
+    let g:tmuxline_preset = {
+          \ 'a'    : '#S',
+          \ 'win'  : '#W',
+          \ 'cwin' : '#W',
+          \ 'x'    : '#{battery_icon}#{battery_percentage}',
+          \ 'y'    : '%y/%m/%d %H:%M',
+          \ 'z'    : '#H '
+          \ }
 " }
