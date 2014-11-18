@@ -67,16 +67,19 @@ alias tvim="tmux new-session 'vim' \; \
 function ide() {
     WS=$(pwd)
     PROJECT=$(basename $WS)
-    tmux has-session -t $PROJECT > /dev/null 2>&1
+    tmux has-session -t "${PROJECT}" > /dev/null 2>&1
     if [ $? != 0 ]
     then
-        tmux -q \
-            new-session -s $PROJECT -n editor -c "$WS" -d  vim \; \
-            new-window -t $PROJECT -n server -c "$WS" \; \
-            new-window -t $PROJECT -n shell -c "$WS" \; \
-            select-window -t $PROJECT:1 \;
+        tmux -v \
+            new-session -s "${PROJECT}" -n editor -c "${WS}" -d  vim \; \
+            split-window -h -l 70 -t "${PROJECT}:editor"\; \
+            new-window -t "${PROJECT}" -n server -c "${WS}" \; \
+            new-window -t "${PROJECT}" -n shell -c "${WS}" \; \
+            select-window -t "${PROJECT}:editor" \; \
+            select-pane -t "${PROJECT}:editor.1" \; \
+            resize-pane -Z -t "${PROJECT}:editor.1" \;
     fi
-    tmux -q attach -t $PROJECT > /dev/null 2>&1
+    tmux -q attach -t "${PROJECT}" > /dev/null 2>&1
 }
 export ide
 
