@@ -59,22 +59,30 @@ alias tml="tmux list-sessions"
 alias tma="tmux attach-session"
 alias tmc="clear && tmux clear-history"
 alias tmk="tmux kill-session"
-alias tvim="tmux new-session 'vim' \; \
-            rename-window 'vim' \; \
+alias tvim="tmux new-session -n vim 'vim' \; \
             split-window -h -p 45 \; \
             select-pane -L \;"
 
+function ve() {
+    PROJECT=$(basename $(pwd))
+    if [ -d "${WORKON_HOME}/${PROJECT}" ]
+    then
+        source "${WORKON_HOME}/${PROJECT}/bin/activate"
+    fi
+}
+export ve
+
 function ide() {
-    WS=$(pwd)
-    PROJECT=$(basename $WS)
+    PWD=$(pwd)
+    PROJECT=$(basename $PWD)
     tmux has-session -t "${PROJECT}" > /dev/null 2>&1
     if [ $? != 0 ]
     then
-        tmux -v \
-            new-session -s "${PROJECT}" -n editor -c "${WS}" -d  vim \; \
-            split-window -h -l 70 -t "${PROJECT}:editor"\; \
-            new-window -t "${PROJECT}" -n server -c "${WS}" \; \
-            new-window -t "${PROJECT}" -n shell -c "${WS}" \; \
+        tmux -q \
+            new-session -s "${PROJECT}" -n editor -c "${PWD}" -d  vim \; \
+            split-window -h -p 40 -t "${PROJECT}:editor"\; \
+            new-window -t "${PROJECT}" -n server -c "${PWD}" \; \
+            new-window -t "${PROJECT}" -n shell -c "${PWD}" \; \
             select-window -t "${PROJECT}:editor" \; \
             select-pane -t "${PROJECT}:editor.1" \; \
             resize-pane -Z -t "${PROJECT}:editor.1" \;
