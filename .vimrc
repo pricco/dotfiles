@@ -1,1 +1,1 @@
-exclude/spf13-vim/.vimrc
+exclude/dotvim/.vimrc
