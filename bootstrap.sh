@@ -2,9 +2,19 @@
 
 DOTFILES_DIR="$HOME/.dotfiles"
 DOTFILES_GIT="git://github.com/pricco/dotfiles.git"
+DOTFILES_BRANCH="master"
+
+DOTZSH_DIR="$HOME/.dotzsh"
+DOTZSH_GIT="git://github.com/pricco/dotzsh.git"
+DOTZSH_BRANCH="master"
+
+DOTVIM_DIR="$HOME/.dotvim"
+DOTVIM_GIT="git://github.com/pricco/dotvim.git"
+DOTVIM_BRANCH="3.0"
 
 VUNDLE_DIR="$HOME/.vim/bundle/vundle"
 VUNDLE_GIT="git://github.com/gmarik/vundle.git"
+VUNDLE_BRANCH="master"
 
 ##### Common functions
 
@@ -35,29 +45,18 @@ program_exists() {
 
 ##### Setup functions
 
-clone_dotfiles() {
-    if [ ! -e "$DOTFILES_DIR" ]; then
-        git clone --recursive "$DOTFILES_GIT" "$DOTFILES_DIR" &&
-        cd "$DOTFILES_DIR" &&
+clone() {
+    if [ ! -e "$1" ]; then
+        git clone --recursive "$2" "$1" &&
+        cd "$1" &&
         git submodule init &&
         git submodule update
     else
-        cd "$DOTFILES_DIR" &&
-        git pull -q origin master
+        cd "$1" &&
+        git pull -q origin "$3"
     fi
     ret="$?"
-    success "$1"
-}
-
-clone_vundle() {
-    if [ ! -e "$VUNDLE_DIR" ]; then
-        git clone -q $VUNDLE_GIT "$VUNDLE_DIR"
-    else
-        cd "$VUNDLE_DIR" &&
-        git pull -q origin master
-    fi
-    ret="$?"
-    success "$1"
+    success "$4"
 }
 
 sync_dotfiles() {
@@ -91,8 +90,11 @@ install() {
     program_exists "rsync" "Sorry, we cannot continue without RSYNC, please install it first."
     program_exists "pip" "Sorry, we cannot continue without PIP, please install it first."
 
-    clone_dotfiles "Successfully cloned dotfiles"
-    clone_vundle "Successfully cloned vundle"
+    clone $DOTFILES_DIR $DOTFILES_GIT $DOTFILES_BRANCH "Successfully cloned dotfiles"
+    clone $DOTVIM_DIR $DOTVIM_GIT $DOTVIM_BRANCH "Successfully cloned dotvim"
+    clone $DOTZSH_DIR $DOTZSH_GIT $DOTZSH_BRANCH "Successfully cloned dotzsh"
+    clone $VUNDLE_DIR $VUNDLE_GIT $VUNDLE_BRANCH "Successfully cloned vundle"
+
     sync_dotfiles "Successfully sync dotfiles"
     install_deps "Successfully installed dependencies"
     setup_vundle "Now updating/installing plugins using Vundle"

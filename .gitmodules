@@ -1,12 +1,9 @@
-[submodule "exclude/spf13-vim"]
-	path = exclude/spf13-vim
-	url = git@github.com:spf13/spf13-vim.git
-[submodule ".tmux/plugins/tpm"]
-	path = .tmux/plugins/tpm
+[submodule "dot/tmux/.tmux/plugins/tpm"]
+	path = dot/tmux/.tmux/plugins/tpm
 	url = git@github.com:tmux-plugins/tpm.git
-[submodule "exclude/dotvim"]
-	path = exclude/dotvim
+[submodule "dot/vim"]
+	path = dot/vim
 	url = git@github.com:pricco/dotvim.git
-[submodule "exclude/antigen"]
-	path = exclude/antigen
-	url = git@github.com:zsh-users/antigen.git
+[submodule "dot/zsh"]
+	path = dot/zsh
+	url = git@github.com:pricco/dotzsh.git
