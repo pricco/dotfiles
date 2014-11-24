@@ -1,9 +1,9 @@
-[submodule "dot/tmux/.tmux/plugins/tpm"]
-	path = dot/tmux/.tmux/plugins/tpm
+[submodule "tmux/.tmux/plugins/tpm"]
+	path = tmux/.tmux/plugins/tpm
 	url = git@github.com:tmux-plugins/tpm.git
-[submodule "dot/vim"]
-	path = dot/vim
+[submodule "vim"]
+	path = vim
 	url = git@github.com:pricco/dotvim.git
-[submodule "dot/zsh"]
-	path = dot/zsh
+[submodule "zsh"]
+	path = zsh
 	url = git@github.com:pricco/dotzsh.git
