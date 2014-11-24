@@ -7,3 +7,6 @@
 [submodule "exclude/dotvim"]
 	path = exclude/dotvim
 	url = git@github.com:pricco/dotvim.git
+[submodule "exclude/antigen"]
+	path = exclude/antigen
+	url = git@github.com:zsh-users/antigen.git

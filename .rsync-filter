@@ -4,6 +4,4 @@ exclude .git/
 exclude .gitignore
 exclude .gitmodules
 exclude bootstrap.sh
-exclude install.sh
 exclude README.md
-exclude VIM.md
