@@ -54,7 +54,7 @@ ZSH_THEME="fwalch"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux archlinux)
+plugins=(git tmux archlinux vi-mode python last-working-dir zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,6 +89,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
+export KEYTIMEOUT=1
 export TERM="xterm-256color"
 
 # Python Virtual Environments
@@ -100,5 +101,3 @@ for file in ~/.{exports,aliases,functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done;
 unset file;
-
-cwd

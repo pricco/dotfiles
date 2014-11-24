@@ -43,17 +43,6 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
-# Reload the shell (i.e. invoke as a login shell)
-alias reload="exec $SHELL -l"
-
-# Function to switch and save the current path
-function cd() {
-    builtin cd "$@";
-    echo "$PWD" > ~/.cwd;
-}
-export cd
-alias cwd='cd "$(cat ~/.cwd)"'
-
 # Tmux
 alias tml="tmux list-sessions"
 alias tma="tmux attach-session"
@@ -75,6 +64,7 @@ export ve
 function ide() {
     PWD=$(pwd)
     PROJECT=$(basename $PWD)
+    PROJECT=${PROJECT//./}
     tmux has-session -t "${PROJECT}" > /dev/null 2>&1
     if [ $? != 0 ]
     then
