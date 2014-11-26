@@ -1,7 +1,0 @@
-exclude .rsync-filter
-exclude exclude/
-exclude .git/
-exclude .gitignore
-exclude .gitmodules
-exclude bootstrap.sh
-exclude README.md
