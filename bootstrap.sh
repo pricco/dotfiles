@@ -1,8 +1,8 @@
 #!/bin/bash
 
-DOTFILES_DIR="${HOME}/.dotfiles"
-DOTFILES_GIT="git://github.com/pricco/dotfiles.git"
-DOTFILES_BRANCH="master"
+dotfiles_dir="${HOME}/.dotfiles"
+dotfiles_git="git://github.com/pricco/dotfiles.git"
+dotfiles_branch="master"
 
 info () {
   if [ "${1}" -eq '0' ]; then
@@ -121,7 +121,8 @@ link_file () {
 
 dotfiles_install () {
   program_exists "git"
-  for dot in $DOTFILES_DIR/* ; do
+  clone "${dotfiles_dir}" "${dotfiles_git}" "${dotfiles_branch}"
+  for dot in $dotfiles_dir/* ; do
     if [ -f "${dot}/bootstrap.sh" ]; then
       source "${dot}/bootstrap.sh" $1
     fi
