@@ -1,9 +1,8 @@
 # Requirements
 
-* zsh (apt-get/pacman)
-* oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh
-* tmux (apt-get/pacman)
-* ag: silversearcher-ag (apt-get/pacman)
+* zsh
+* tmux
+* ag?
 
 # Install
 
@@ -23,10 +22,11 @@ sh -c "`curl -fsSL https://raw.github.com/pricco/dotfiles/master/bootstrap.sh`"
 
 # Inspiration
 
+* https://github.com/skwp/dotfiles
 * http://vim.spf13.com/
 * http://amix.dk/vim/vimrc.html
 * https://github.com/mathiasbynens/dotfiles
 * http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 * https://github.com/kien/ctrlp.vim
 * http://nvie.com/posts/how-i-boosted-my-vim/
-* TMUX: https://github.com/grota/dotfiles
+* https://github.com/grota/dotfiles
