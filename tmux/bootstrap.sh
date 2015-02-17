@@ -3,7 +3,7 @@
 install_tmux () {
   local base="${dotfiles_dir}/tmux"
   local overwrite_all=false backup_all=false skip_all=false
-  local files=(".tmux.conf" ".tmux.monokai.conf")
+  local files=(".tmux.conf" ".tmux.monokai.conf" ".tmux.solarized.conf")
   for file in "${files[@]}"; do
     link_file "${base}/${file}" "${HOME}/${file}"
   done

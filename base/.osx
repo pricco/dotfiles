@@ -1,0 +1,6 @@
+# Based on:
+# https://github.com/mathiasbynens/dotfiles/blob/master/.osx
+# https://github.com/eduardolundgren/dotfiles/blob/master/templates/.osx
+
+# Ask for the administrator password upfront
+sudo -v

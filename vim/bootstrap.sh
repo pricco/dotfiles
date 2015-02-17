@@ -3,7 +3,7 @@
 install_vim () {
   local dir="${HOME}/.dotvim"
   local git="git@github.com:pricco/dotvim.git"
-  local branch="3.0"
+  local branch="master"
 
   program_exists "git"
   clone "${dir}" "${git}" "${branch}"
