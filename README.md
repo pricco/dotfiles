@@ -1,18 +1,22 @@
-# Requirements
+# Dot Files
+![Screen Shot](https://github.com/pricco/dotfiles/raw/master/screenshot.png)
+
+## Requirements
 
 * zsh
 * tmux
 * ag?
 
-# Install
+## Install
 
 ```
 sh -c "`curl -fsSL https://raw.github.com/pricco/dotfiles/master/bootstrap.sh`"
 ```
 
 * TMUX: `Ctrl+a I` (to install plugins)
+* iTerm2: After copy configuratin run `killall cfprefsd` and restart iTerm2 (cmd+q) to reload configuration
 
-# Fonts (zsh/vim/tmux)
+### Fonts (zsh/vim/tmux)
 
 * http://powerline.readthedocs.org/en/latest/installation/linux.html#patched-font-installation
 * http://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig
@@ -20,11 +24,7 @@ sh -c "`curl -fsSL https://raw.github.com/pricco/dotfiles/master/bootstrap.sh`"
 * https://github.com/Lokaltog/powerline/issues/96
 * Mocaco (patched)
 
-# iTerm2
-
-* After copy configuratin run `killall cfprefsd` and restart iTerm2 (cmd+q) to reload configuration
-
-# Inspiration
+## Inspiration
 
 * https://github.com/skwp/dotfiles
 * http://vim.spf13.com/
