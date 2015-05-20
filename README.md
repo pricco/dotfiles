@@ -20,6 +20,10 @@ sh -c "`curl -fsSL https://raw.github.com/pricco/dotfiles/master/bootstrap.sh`"
 * https://github.com/Lokaltog/powerline/issues/96
 * Mocaco (patched)
 
+# iTerm2
+
+* After copy configuratin run `killall cfprefsd` and restart iTerm2 (cmd+q) to reload configuration
+
 # Inspiration
 
 * https://github.com/skwp/dotfiles
