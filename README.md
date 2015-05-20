@@ -1,4 +1,4 @@
-# Pablo's fotfiles
+# Pablo's dotfiles
 ![Screen Shot](https://github.com/pricco/dotfiles/raw/master/screenshot.png)
 
 ## Requirements
