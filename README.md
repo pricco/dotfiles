@@ -1,28 +1,33 @@
-# Dot Files
+# Pablo's fotfiles
 ![Screen Shot](https://github.com/pricco/dotfiles/raw/master/screenshot.png)
 
 ## Requirements
 
 * zsh
 * tmux
-* ag?
+* iterm2 (optional)
+* ag (optional)
 
-## Install
+## Installation
 
-```
+To install these dotfiles:
+
+```bash
 sh -c "`curl -fsSL https://raw.github.com/pricco/dotfiles/master/bootstrap.sh`"
 ```
 
-* TMUX: `Ctrl+a I` (to install plugins)
-* iTerm2: After copy configuratin run `killall cfprefsd` and restart iTerm2 (cmd+q) to reload configuration
+### Post Instllation
 
-### Fonts (zsh/vim/tmux)
+* Under tmux press `Ctrl+a I` to install the tmux's plugins.
+* Set iTerm2 to read the configuration file from user's home then run `killall cfprefsd` and restart iTerm2 (cmd+q) to reload the configuration.
+* Patch the Menlo font to support Powerline characters.
+
+#### Fonts (zsh/vim/tmux)
 
 * http://powerline.readthedocs.org/en/latest/installation/linux.html#patched-font-installation
 * http://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig
 * https://gist.github.com/baopham/1838072
 * https://github.com/Lokaltog/powerline/issues/96
-* Mocaco (patched)
 
 ## Inspiration
 
