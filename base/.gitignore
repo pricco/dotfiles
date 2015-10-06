@@ -3,7 +3,8 @@ __pycache__/
 *.py[cod]
 *.swo
 *.swp
+.python-version
 
 .lvimrc
 .DS_Store
-NOTES
+/NOTES
