@@ -1,4 +1,5 @@
 # Pablo's dotfiles
+[![Travis CI](https://travis-ci.org/pricco/dotfiles.svg?branch=master)](https://travis-ci.org/pricco/dotfiles)
 ![Screen Shot](https://github.com/pricco/dotfiles/raw/master/screenshot.png)
 
 ## Requirements
