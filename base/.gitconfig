@@ -2,6 +2,7 @@
 [user]
     name = Pablo Ricco
     email = pricco@gmail.com
+	signingkey = 31256D1B
 [alias]
     # View abbreviated SHA, description, and history graph of the latest 20 commits
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
