@@ -21,7 +21,7 @@ user () {
 
 program_exists () {
   local ret='0'
-  type $1 >/dev/null 2>&1 || { local ret='1'; }
+  type "$1" >/dev/null 2>&1 || { local ret='1'; }
   # throw error on non-zero return value
   if [ ! "${ret}" -eq '0' ]; then
     info 1 "Sorry, we cannot continue without ${1}, please install it first."
@@ -124,6 +124,7 @@ dotfiles_install () {
   clone "${dotfiles_dir}" "${dotfiles_git}" "${dotfiles_branch}"
   for dot in $dotfiles_dir/* ; do
     if [ -f "${dot}/bootstrap.sh" ]; then
+      # shellcheck source=/dev/null
       source "${dot}/bootstrap.sh" $1
     fi
   done
