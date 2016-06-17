@@ -25,6 +25,7 @@ sh -c "`curl -fsSL https://raw.github.com/pricco/dotfiles/master/bootstrap.sh`"
 * Set iTerm2 to read the configuration file from user's home then run
   `killall cfprefsd` and restart iTerm2 (cmd+q) to reload the configuration.
 * Patch the Menlo font to support Powerline characters.
+* Set your username and e-mail in ~/.gitconfig
 
 #### Fonts (zsh/vim/tmux)
 
