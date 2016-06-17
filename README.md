@@ -8,6 +8,9 @@
 * iterm2 (optional)
 * ag (optional)
 
+### Tests
+* shellcheck
+
 ## Installation
 
 To install these dotfiles:
@@ -19,7 +22,8 @@ sh -c "`curl -fsSL https://raw.github.com/pricco/dotfiles/master/bootstrap.sh`"
 ### Post Instllation
 
 * Under tmux press `Ctrl+a I` to install the tmux's plugins.
-* Set iTerm2 to read the configuration file from user's home then run `killall cfprefsd` and restart iTerm2 (cmd+q) to reload the configuration.
+* Set iTerm2 to read the configuration file from user's home then run
+  `killall cfprefsd` and restart iTerm2 (cmd+q) to reload the configuration.
 * Patch the Menlo font to support Powerline characters.
 
 #### Fonts (zsh/vim/tmux)
