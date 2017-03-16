@@ -7,6 +7,7 @@ install_zsh () {
 
   program_exists "git"
   clone "${dir}" "${git}" "${branch}"
+  # shellcheck source=/dev/null
   source "${dir}/bootstrap.sh"
 }
 

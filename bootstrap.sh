@@ -55,7 +55,8 @@ link_file () {
     if [ "${overwrite_all}" == "false" ] && [ "${backup_all}" == "false" ] && [ "${skip_all}" == "false" ]
     then
 
-      local currentSrc="$(readlink $dst)"
+      local currentSrc
+      currentSrc="$(readlink $dst)"
 
       if [ "${currentSrc}" == "$src" ]
       then
@@ -130,4 +131,4 @@ dotfiles_install () {
   done
 }
 
-dotfiles_install
+dotfiles_install "$@"
