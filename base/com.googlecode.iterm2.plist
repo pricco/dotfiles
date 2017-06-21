@@ -2692,7 +2692,7 @@
 					<key>Action</key>
 					<integer>11</integer>
 					<key>Text</key>
-					<string>0x01 0x54</string>
+					<string>0x01 0x53</string>
 				</dict>
 				<key>0x77-0x100000</key>
 				<dict>
