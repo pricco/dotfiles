@@ -20,6 +20,12 @@ To install these dotfiles:
 sh -c "`curl -fsSL https://raw.github.com/pricco/dotfiles/master/bootstrap.sh`"
 ```
 
+### Fix slow vim on mac+iterm+tmux
+
+`defaults write -g KeyRepeat -int 1`
+
+Source: https://github.com/tmux/tmux/issues/353#issuecomment-419286706
+
 ### Post Instllation
 
 * Under tmux press `Ctrl+a I` to install the tmux's plugins.
