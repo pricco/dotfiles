@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dotfiles_dir="${HOME}/.dotfiles"
-dotfiles_git="git://github.com/pricco/dotfiles.git"
+dotfiles_git="git@github.com:pricco/dotfiles.git"
 dotfiles_branch="master"
 
 info () {
