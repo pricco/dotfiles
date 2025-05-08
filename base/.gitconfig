@@ -2,7 +2,7 @@
 [user]
     name = Pablo Ricco
     email = pricco@gmail.com
-	signingkey = 31256D1B
+	signingKey = 5C2F375D
 [alias]
     # View abbreviated SHA, description, and history graph of the latest 20 commits
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
@@ -181,4 +181,4 @@
 [commit]
 	gpgsign = true
 [gpg]
-	program = gpg1
+	program = /opt/homebrew/bin/gpg

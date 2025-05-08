@@ -1,14 +1,12 @@
 #!/bin/bash
 
-install_vim () {
-  local dir="${HOME}/.dotvim"
-  local git="git@github.com:pricco/dotvim.git"
-  local branch="master"
+vim_install () {
+    program_exists "curl"
+    info $? "Updated plug.vim"
+    curl -sfLo "${HOME}/.vim/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-  program_exists "git"
-  clone "${dir}" "${git}" "${branch}"
-  # shellcheck source=/dev/null
-  source "${dir}/bootstrap.sh"
+    local overwrite_all=false backup_all=false skip_all=false
+    link_file "${dotfiles_dir}/vim/.vimrc" "${HOME}/.vimrc"
 }
 
-install_vim
+vim_install

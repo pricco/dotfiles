@@ -1,8 +1,8 @@
 #!/bin/bash
 
 install_tmux () {
-  local base="${dotfiles_dir}/tmux"
   local overwrite_all=false backup_all=false skip_all=false
+  local base="${dotfiles_dir}/tmux"
   local files=(".tmux.conf")
   for file in "${files[@]}"; do
     link_file "${base}/${file}" "${HOME}/${file}"
