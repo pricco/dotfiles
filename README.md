@@ -1,16 +1,12 @@
 # Pablo's dotfiles
-[![Travis CI](https://travis-ci.org/pricco/dotfiles.svg?branch=master)](https://travis-ci.org/pricco/dotfiles)
-![Screen Shot](https://github.com/pricco/dotfiles/raw/master/screenshot.png)
 
 ## Requirements
 
-* zsh
+* wezterm
 * tmux
-* iterm2 (optional)
-* ag (optional)
-
-### Tests
-* shellcheck
+* zsh (zprezto)
+* starship
+* nvim
 
 ## Installation
 
@@ -29,20 +25,14 @@ Source: https://github.com/tmux/tmux/issues/353#issuecomment-419286706
 ### Post Instllation
 
 * Under tmux press `Ctrl+a I` to install the tmux's plugins.
-* Set iTerm2 to read the configuration file from user's home then run
-  `killall cfprefsd` and restart iTerm2 (cmd+q) to reload the configuration.
-* Patch the Menlo font to support Powerline characters.
-* Set your username and e-mail in ~/.gitconfig
 
 #### Fonts (zsh/vim/tmux)
 
-* http://powerline.readthedocs.org/en/latest/installation/linux.html#patched-font-installation
-* http://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig
-* https://gist.github.com/baopham/1838072
-* https://github.com/Lokaltog/powerline/issues/96
+* https://www.nerdfonts.com/font-downloads
 
 ## Inspiration
 
+* https://github.com/hendrikmi/dotfiles/
 * https://github.com/skwp/dotfiles
 * http://vim.spf13.com/
 * http://amix.dk/vim/vimrc.html

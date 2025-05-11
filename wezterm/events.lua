@@ -2,8 +2,9 @@ local wezterm = require("wezterm")
 local mux = wezterm.mux
 
 wezterm.on("gui-startup", function()
-  local _, _, window = mux.spawn_window({})
-  window:gui_window():maximize()
+  local tab, pane, window = mux.spawn_window({})
+  local gui_window = window:gui_window()
+  gui_window:perform_action(wezterm.action.ToggleFullScreen, pane)
 end)
 
 -- wezterm.on("window-resized", function(window, pane)

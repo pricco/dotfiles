@@ -5,6 +5,4 @@ __pycache__/
 *.swp
 .python-version
 
-.lvimrc
 .DS_Store
-/NOTES
