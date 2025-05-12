@@ -1,8 +1,8 @@
-local wezterm = require("wezterm")
+local wezterm = require('wezterm')
 local mux = wezterm.mux
 
-wezterm.on("gui-startup", function()
-  local tab, pane, window = mux.spawn_window({})
+wezterm.on('gui-startup', function()
+  local _, pane, window = mux.spawn_window({})
   local gui_window = window:gui_window()
   gui_window:perform_action(wezterm.action.ToggleFullScreen, pane)
 end)
@@ -34,7 +34,7 @@ function readjust_font_size(window, pane)
     -- wezterm.log_info(window_dims, pane_dims, config_overrides.font_size)
     wezterm.log_info(
       string.format(
-        "Win Height: %d, Pane Height: %d, Height Diff: %d, Curr Font Size: %.2f, Cells: %d, Cell Height: %.2f",
+        'Win Height: %d, Pane Height: %d, Height Diff: %d, Curr Font Size: %.2f, Cells: %d, Cell Height: %.2f',
         window_dims.pixel_height,
         pane_dims.pixel_height,
         window_dims.pixel_height - pane_dims.pixel_height,

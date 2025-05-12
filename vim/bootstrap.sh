@@ -1,12 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-vim_install () {
-    program_exists "curl"
-    info $? "Updated plug.vim"
-    curl -sfLo "${HOME}/.vim/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+set -euo pipefail
 
-    local overwrite_all=false backup_all=false skip_all=false
-    link_file "${dotfiles_dir}/vim/.vimrc" "${HOME}/.vimrc"
+source "$(dirname "${BASH_SOURCE[0]}")/../common.sh"
+
+vim_install() {
+  program_exists "curl"
+  info $? "Updated plug.vim"
+  curl -sfLo "${HOME}/.vim/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+  local overwrite_all=false backup_all=false skip_all=false
+  link_file "${DOTFILES_DIR}/vim/.vimrc" "${HOME}/.vimrc"
 }
 
 vim_install

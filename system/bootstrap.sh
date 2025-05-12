@@ -1,7 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$(dirname "${BASH_SOURCE[0]}")/../common.sh"
 
 install_system() {
-  source "system.sh" $1
+  source "$(dirname "${BASH_SOURCE[0]}")/system.sh"
 }
 
-install_systsystem
+install_system
