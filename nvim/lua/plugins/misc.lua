@@ -3,22 +3,25 @@ return {
     'windwp/nvim-ts-autotag',
   },
   {
+    'tpope/vim-sleuth',
+  },
+  {
     'tpope/vim-fugitive',
   },
   {
     'folke/which-key.nvim',
   },
   {
-    'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    config = true,
-    opts = {},
+    -- Extensible UI for Neovim notifications and LSP progress messages.
+    'j-hui/fidget.nvim',
   },
   {
     'folke/todo-comments.nvim',
     event = 'VimEnter',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    opts = { signs = false },
+    opts = {
+      signs = false,
+    },
   },
   {
     'norcalli/nvim-colorizer.lua',

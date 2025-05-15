@@ -66,13 +66,14 @@ return {
           'bash-language-server',
           'lua-language-server',
           'vim-language-server',
-          'pyright',
+          'basedpyright',
 
           -- Linters/formatters
           'stylua',
           'shellcheck',
           'editorconfig-checker',
           'shfmt',
+          'isort',
 
           -- Debuggers
         },
@@ -90,9 +91,8 @@ return {
     },
     config = function()
       require('mason-lspconfig')
-
       local lspconfig = require('lspconfig')
-
+      local capabilities = vim.tbl_deep_extend('force', vim.lsp.protocol.make_client_capabilities(), require('cmp_nvim_lsp').default_capabilities())
       local servers = {
         lua_ls = {
           settings = {
@@ -107,21 +107,38 @@ return {
             },
           },
         },
-        pyright = {},
+        basedpyright = {
+          root_dir = require('lspconfig.util').root_pattern('pyrightconfig.json'),
+          settings = nil,
+        },
         ts_ls = {},
         bashls = {},
         jsonls = {},
       }
 
-      local capabilities = vim.tbl_deep_extend('force', vim.lsp.protocol.make_client_capabilities(), require('cmp_nvim_lsp').default_capabilities())
-
       for server, opts in pairs(servers) do
+        opts = opts or {}
         if not opts.on_attach then
-          opts.on_attach = function(client, _)
+          opts.on_attach = function(client, bufnr)
             format.disable_formatting(client)
+            local options = { noremap = true, silent = true, buffer = bufnr }
+            vim.keymap.set('n', 'gf', vim.lsp.buf.references, options) -- show definition, references
+            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, options) -- got to declaration
+            vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, options) -- got to declaration
+            vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, options) -- go to implementation
+            vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, options) -- show signature help
+            vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, options) -- show signature help
+            vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, options) -- see available code actions
+            vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, options) -- smart rename
+            vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.jump({count=-1, float=true})<CR>', options) -- jump to previous diagnostic in buffer
+            vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.jump({count=1, float=true})<CR>', options) -- jump to next diagnostic in buffer
+            vim.keymap.set('n', 'K', vim.lsp.buf.hover, options) -- show documentation for what is under cursor
           end
         end
         opts.capabilities = capabilities
+        if opts.settings and vim.tbl_isempty(opts.settings) then
+          opts.settings = nil
+        end
         lspconfig[server].setup(opts)
       end
     end,
@@ -149,10 +166,12 @@ return {
           formatting.prettier.with({ filetypes = { 'html', 'json', 'yaml', 'markdown' } }),
           formatting.shfmt.with({ args = { '-i', '4' } }),
           formatting.stylua,
-          require('none-ls.formatting.ruff').with({ extra_args = { '--extend-select', 'I' } }),
-          require('none-ls.formatting.ruff_format'),
+          formatting.isort,
+          require('none-ls.diagnostics.ruff'),
+          -- require('none-ls.formatting.ruff_format'),
         },
         on_attach = format.on_attach_format_only_null_ls,
+        debug = true,
       })
     end,
   },

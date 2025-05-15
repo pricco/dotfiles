@@ -15,7 +15,7 @@ vim.keymap.set('n', '<Space>', '<Nop>')
 -- Move between Tab & Split
 vim.keymap.set('n', '<Tab>', ':tabn<CR>', opts)
 vim.keymap.set('n', '<S-Tab>', ':tabp<CR>', opts)
-vim.keymap.set('n', '<leader>x', ':tabclose<CR>', opts)     -- close buffer
+vim.keymap.set('n', '<leader>x', ':tabclose<CR>', opts) -- close buffer
 vim.keymap.set('n', '<leader>t', '<cmd> tabnew <CR>', opts) -- new buffer
 vim.keymap.set('n', '<M-t>', ':tabn<CR>', { noremap = true })
 vim.keymap.set('i', '<M-t>', '<Esc>:tabn<CR>', { noremap = true })
@@ -23,9 +23,9 @@ vim.keymap.set('n', '<M-s>', ':wincmd w<CR>', { noremap = true })
 vim.keymap.set('i', '<M-s>', '<Esc>:wincmd w<CR>', { noremap = true })
 
 -- Window management
-vim.keymap.set('n', '<leader>v', '<C-w>v', opts)      -- split window vertically
-vim.keymap.set('n', '<leader>h', '<C-w>s', opts)      -- split window horizontally
-vim.keymap.set('n', '<leader>se', '<C-w>=', opts)     -- make split windows equal width & height
+vim.keymap.set('n', '<leader>v', '<C-w>v', opts) -- split window vertically
+vim.keymap.set('n', '<leader>h', '<C-w>s', opts) -- split window horizontally
+vim.keymap.set('n', '<leader>se', '<C-w>=', opts) -- make split windows equal width & height
 vim.keymap.set('n', '<leader>xs', ':close<CR>', opts) -- close current split window
 
 -- Save
@@ -50,6 +50,7 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
 
+-- Show error
 --[[
 
 

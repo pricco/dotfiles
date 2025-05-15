@@ -29,12 +29,6 @@ return {
   },
   lazy = false,
   config = function()
-    -- If you want icons for diagnostic errors, you'll need to define them somewhere:
-    vim.fn.sign_define('DiagnosticSignError', { text = ' ', texthl = 'DiagnosticSignError' })
-    vim.fn.sign_define('DiagnosticSignWarn', { text = ' ', texthl = 'DiagnosticSignWarn' })
-    vim.fn.sign_define('DiagnosticSignInfo', { text = ' ', texthl = 'DiagnosticSignInfo' })
-    vim.fn.sign_define('DiagnosticSignHint', { text = '󰌵', texthl = 'DiagnosticSignHint' })
-
     require('neo-tree').setup({
       close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
       popup_border_style = 'rounded',
@@ -84,7 +78,7 @@ return {
         },
         name = {
           trailing_slash = false,
-          use_git_status_colors = true,
+          use_git_status_colors = false,
           highlight = 'NeoTreeFileName',
         },
         git_status = {
@@ -146,8 +140,6 @@ return {
           ['l'] = 'open',
           ['S'] = 'open_split',
           ['s'] = 'open_vsplit',
-          -- ["S"] = "split_with_window_picker",
-          -- ["s"] = "vsplit_with_window_picker",
           ['t'] = 'open_tabnew',
           -- ["<cr>"] = "open_drop",
           -- ["t"] = "open_tab_drop",

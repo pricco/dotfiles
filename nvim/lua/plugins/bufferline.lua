@@ -1,5 +1,6 @@
 return {
   'akinsho/bufferline.nvim',
+  after = 'catppuccin',
   dependencies = {
     'moll/vim-bbye',
     'nvim-tree/nvim-web-devicons',
@@ -29,7 +30,7 @@ return {
         show_buffer_close_icons = false,
         show_close_icon = false,
         --
-        -- separator_style = { "│", "│" }, -- | "thick" | "thin" | { 'any', 'any' },
+        separator_style = 'slant',
         enforce_regular_tabs = true,
         always_show_bufferline = true,
         show_tab_indicators = false,
@@ -41,21 +42,16 @@ return {
         minimum_padding = 1,
         maximum_padding = 5,
         maximum_length = 15,
-      },
-      highlights = {
-        separator = {
-          fg = '#434C5E',
+        offsets = {
+          {
+            filetype = 'NvimTree',
+            text = 'File Explorer',
+            text_align = 'left',
+            separator = true,
+          },
         },
-        buffer_selected = {
-          bold = true,
-          italic = false,
-        },
-        -- separator_selected = {},
-        tab_selected = {},
-        -- background = {},
-        -- indicator_selected = {},
-        -- fill = {},
       },
+      highlights = require('catppuccin.groups.integrations.bufferline').get(),
     })
   end,
 }

@@ -18,7 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup plugins
 require('lazy').setup({
-  require('plugins.onedark'),
+  require('plugins.catppucin'),
   require('plugins.trouble'),
   require('plugins.telescope'),
   require('plugins.treesitter'),
@@ -28,14 +28,14 @@ require('lazy').setup({
   require('plugins.bufferline'),
   require('plugins.neo-tree'),
   require('plugins.alpha'),
-  require('plugins.indent-blankline'),
+  -- require('plugins.indent-blankline'),
   require('plugins.lazygit'),
   require('plugins.comment'),
   require('plugins.debug'),
   require('plugins.gitsigns'),
   require('plugins.misc'),
-  -- require 'plugins.avante',
-  -- require 'plugins.chatgpt',
+  require 'plugins.avante',
+  require 'plugins.chatgpt',
   require('plugins.aerial'),
 }, {})
 
@@ -58,6 +58,8 @@ if file_exists(session_file) then
   -- Source the session file
   vim.cmd('source ' .. session_file)
 end
+
+-- vim.lsp.set_log_level('debug')
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
