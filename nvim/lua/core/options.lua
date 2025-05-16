@@ -22,7 +22,6 @@ vim.opt.visualbell = false
 vim.opt.showmode = false
 vim.opt.viewoptions = { 'folds', 'options', 'cursor', 'unix', 'slash' }
 vim.opt.hidden = true
-vim.opt.foldenable = false
 vim.opt.undofile = true
 vim.opt.undolevels = 1000
 vim.opt.undoreload = 10000

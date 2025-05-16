@@ -40,7 +40,7 @@ return {
           grug_far = true,
           cmp = true,
           gitsigns = true,
-          notify = false,
+          notify = true,
           nvimtree = true,
           treesitter = true,
           which_key = true,

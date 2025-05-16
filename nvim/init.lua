@@ -19,6 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup plugins
 require('lazy').setup({
   require('plugins.catppucin'),
+  require('plugins.ufo'),
   require('plugins.trouble'),
   require('plugins.telescope'),
   require('plugins.treesitter'),
@@ -37,8 +38,8 @@ require('lazy').setup({
   require 'plugins.chatgpt',
   require('plugins.aerial'),
   require('plugins.grugfar'),
-  require('plugins.ufo'),
   require('plugins.noice'),
+  require('plugins.notify'),
 }, {})
 
 -- Function to check if a file exists

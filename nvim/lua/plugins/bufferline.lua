@@ -44,8 +44,8 @@ return {
         maximum_length = 15,
         offsets = {
           {
-            filetype = 'NvimTree',
-            text = 'File Explorer',
+            filetype = 'neo-tree',
+            text = 'Explorer',
             text_align = 'left',
             separator = true,
           },
