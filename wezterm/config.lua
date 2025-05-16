@@ -5,6 +5,9 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+local custom = wezterm.color.get_builtin_schemes()['Catppuccin Mocha']
+custom.background = '#11111b'
+
 config = {
   harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
   audible_bell = 'Disabled',
@@ -20,6 +23,10 @@ config = {
   font_size = 13,
   font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Regular' }),
   enable_tab_bar = false,
+  color_schemes = {
+    ['CustomMocha'] = custom,
+  },
+  color_scheme = 'CustomMocha',
   window_padding = {
     left = 0,
     right = 0,

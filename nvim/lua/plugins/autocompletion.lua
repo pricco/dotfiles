@@ -73,8 +73,8 @@ return { -- Autocompletion
       --     documentation = cmp.config.window.bordered(),
       -- },
       mapping = cmp.mapping.preset.insert {
-        ['<C-j>'] = cmp.mapping.select_next_item(), -- Select the [n]ext item
-        ['<C-k>'] = cmp.mapping.select_prev_item(), -- Select the [p]revious item
+        ['<C-n>'] = cmp.mapping.select_next_item(), -- Select the [n]ext item
+        ['<C-p>'] = cmp.mapping.select_prev_item(), -- Select the [p]revious item
         ['<CR>'] = cmp.mapping.confirm { select = true }, -- Accept the completion with Enter.
         ['<C-c>'] = cmp.mapping.complete {}, -- Manually trigger a completion from nvim-cmp.
 

@@ -37,12 +37,14 @@ return {
         integrations = {
           aerial = true,
           alpha = true,
+          grug_far = true,
           cmp = true,
           gitsigns = true,
           notify = false,
           nvimtree = true,
           treesitter = true,
           which_key = true,
+          ufo = true,
           mini = {
             enabled = true,
             indentscope_color = '',
@@ -50,6 +52,7 @@ return {
         },
       })
       vim.cmd.colorscheme 'catppuccin'
+      vim.cmd [[highlight Normal guibg=none ctermbg=none]]
     end,
   },
 }

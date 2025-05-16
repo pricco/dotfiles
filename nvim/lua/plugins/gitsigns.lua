@@ -21,6 +21,6 @@ return {
     })
 
     local opts = { noremap = true, silent = true }
-    vim.keymap.set('n', '<leader>gb', '<cmd>Gitsigns blame_line<cr>', opts)
+    vim.keymap.set('n', '<leader>gb', '<cmd>Gitsigns blame<cr>', opts)
   end,
 }

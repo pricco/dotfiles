@@ -26,9 +26,8 @@ require('lazy').setup({
   require('plugins.autocompletion'),
   require('plugins.lualine'),
   require('plugins.bufferline'),
-  require('plugins.neo-tree'),
+  require('plugins.neotree'),
   require('plugins.alpha'),
-  -- require('plugins.indent-blankline'),
   require('plugins.lazygit'),
   require('plugins.comment'),
   require('plugins.debug'),
@@ -37,6 +36,9 @@ require('lazy').setup({
   require 'plugins.avante',
   require 'plugins.chatgpt',
   require('plugins.aerial'),
+  require('plugins.grugfar'),
+  require('plugins.ufo'),
+  require('plugins.noice'),
 }, {})
 
 -- Function to check if a file exists
