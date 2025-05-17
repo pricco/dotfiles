@@ -300,8 +300,8 @@ return {
         },
       },
     })
-    vim.keymap.set('n', '<leader>nt', '<Cmd>Neotree focus<CR>')
-    vim.keymap.set('n', '<leader>nf', '<Cmd>Neotree reveal<CR>')
-    vim.keymap.set('n', '\\', '<Cmd>Neotree reveal<CR>')
+    vim.keymap.set('n', '<leader>nt', '<Cmd>Neotree float focus<CR>')
+    vim.keymap.set('n', '<leader>nf', '<Cmd>Neotree float reveal<CR>')
+    vim.keymap.set('n', '\\', '<Cmd>Neotree float reveal<CR>')
   end,
 }
