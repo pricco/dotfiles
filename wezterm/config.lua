@@ -118,5 +118,12 @@ config = {
       }),
     },
   },
+  mouse_bindings = {
+    {
+      event = { Up = { streak = 1, button = 'Left' } },
+      mods = 'CMD', -- o "CTRL" en Linux
+      action = wezterm.action.OpenLinkAtMouseCursor,
+    },
+  },
 }
 return config

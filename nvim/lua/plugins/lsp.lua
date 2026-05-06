@@ -67,6 +67,7 @@ return {
           'lua-language-server',
           'vim-language-server',
           'basedpyright',
+          'ts_ls',
 
           -- Linters/formatters
           'stylua',
@@ -74,6 +75,7 @@ return {
           'editorconfig-checker',
           'shfmt',
           'isort',
+          'eslint',
 
           -- Debuggers
         },
@@ -91,7 +93,6 @@ return {
     },
     config = function()
       require('mason-lspconfig')
-      local lspconfig = require('lspconfig')
       local capabilities = vim.tbl_deep_extend('force', vim.lsp.protocol.make_client_capabilities(), require('cmp_nvim_lsp').default_capabilities())
       local servers = {
         lua_ls = {
@@ -114,6 +115,7 @@ return {
         ts_ls = {},
         bashls = {},
         jsonls = {},
+        eslint = {},
       }
 
       for server, opts in pairs(servers) do
@@ -139,7 +141,8 @@ return {
         if opts.settings and vim.tbl_isempty(opts.settings) then
           opts.settings = nil
         end
-        lspconfig[server].setup(opts)
+        vim.lsp.config(server, opts)
+        vim.lsp.enable(server)
       end
     end,
   },

@@ -40,6 +40,7 @@ require('lazy').setup({
   require('plugins.grugfar'),
   require('plugins.noice'),
   require('plugins.notify'),
+  require('plugins.codex'),
 }, {})
 
 -- Function to check if a file exists
